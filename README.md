@@ -28,12 +28,6 @@ python3 verify_release.py
 | `manuscript/` | Final Word manuscript (if copied at build time) |
 | `docs/` | Reproducibility notes for reviewers and *Science Bulletin* |
 
-## What is excluded
-
-- Old manuscript drafts (`讨论后修的版本`, `*reviewer_checklist*`, `*pre_*`)
-- Log files, `.npy`/`.npz` permutation archives (regeneratable)
-- Full `evo_data` caches, GISAID sequences
-- Duplicate CSV copies inside analysis folders when already in `tables/`
 
 ## External data
 
