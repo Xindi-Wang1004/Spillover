@@ -1,0 +1,9 @@
+{
+  "finished": "2026-07-23T16:44:04.931802+00:00",
+  "n_factors": 19,
+  "outputs": {
+    "Table38": "/home/wangxindi/evo-main/paper/bib_tables/Table38_cross_family_common_factors.csv",
+    "Figure_S13": "/home/wangxindi/evo-main/paper/bib_figures/SupplementaryFigure_S13_cross_family_common_factors.png",
+    "synthesis": "/home/wangxindi/evo-main/paper/analysis_host_interaction_enrichment/MOLECULAR_LAYER_SYNTHESIS.md"
+  }
+}

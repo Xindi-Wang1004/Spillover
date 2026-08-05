@@ -1,0 +1,11 @@
+{
+  "finished": "2026-07-23T11:07:23.262378+00:00",
+  "k": 5,
+  "score_used": "pred_regression",
+  "outputs": {
+    "Table34": "/home/wangxindi/evo-main/paper/bib_tables/Table34_family_controlled_kmer_enrichment.csv",
+    "Table35": "/home/wangxindi/evo-main/paper/bib_tables/Table35_aa_property_shifts_high_vs_low.csv",
+    "Table36": "/home/wangxindi/evo-main/paper/bib_tables/Table36_top_kmers_by_family.csv",
+    "Figure_S11": "/home/wangxindi/evo-main/paper/bib_figures/SupplementaryFigure_S11_motif_physicochem.png"
+  }
+}

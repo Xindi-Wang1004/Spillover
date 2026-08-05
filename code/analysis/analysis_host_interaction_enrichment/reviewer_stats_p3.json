@@ -1,0 +1,50 @@
+{
+  "top_q_high_attr_windows": 0.1,
+  "definition": "High windows = top 10% attribution-sum windows within genome (top_q=0.1). Low windows = complementary low-attribution windows used in Table31.",
+  "n_perm_circular_shift": 2000,
+  "seed": 42,
+  "fisher_tests": [
+    {
+      "class": "entry_interface",
+      "a": 1,
+      "b": 9,
+      "c": 3,
+      "d": 17,
+      "or": 0.6296296296296297,
+      "p": 1.0,
+      "or_ci95_woolf_haldane": [
+        0.09967654954091579,
+        6.2529120533521185
+      ],
+      "p_fdr_bh": 1.0
+    },
+    {
+      "class": "polymerase_replicase",
+      "a": 8,
+      "b": 2,
+      "c": 2,
+      "d": 18,
+      "or": 36.0,
+      "p": 0.00029126295992862707,
+      "or_ci95_woolf_haldane": [
+        3.6443840638960996,
+        173.6989265953632
+      ],
+      "p_fdr_bh": 0.0008737888797858812
+    },
+    {
+      "class": "host_interaction_broad",
+      "a": 9,
+      "b": 1,
+      "c": 8,
+      "d": 12,
+      "or": 13.5,
+      "p": 0.0174055829228243,
+      "or_ci95_woolf_haldane": [
+        1.3519312229347333,
+        64.16412391040397
+      ],
+      "p_fdr_bh": 0.02610837438423645
+    }
+  ]
+}

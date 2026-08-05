@@ -1,0 +1,2 @@
+OR_obs_haldane,high_in,high_out,low_in,low_out,fisher_p_obs,B,seed,null_OR_mean,null_OR_p2.5,null_OR_p97.5,empirical_two_sided_p,gate,top_index0,top_index1,top_index2,low_windows_ge50pct_orf1ab,mean_frac_pol_low_peakfrag
+25.1600,8,2,2,18,0.000291263,10000,42,1.6673,0.1911,5.2963,0.00429957,keep_OR36_primary,1,8,1,2,0.1436

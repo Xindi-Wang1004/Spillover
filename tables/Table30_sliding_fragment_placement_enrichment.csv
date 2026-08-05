@@ -1,0 +1,7 @@
+class,n_fragments,obs_hits,obs_frac,null_mean,null_p95,enrichment_vs_null,p_value,analysis
+entry_interface,30,4,0.13333333333333333,0.1228,0.23333333333333334,1.0857763300671623,0.5237381309345327,unbiased_sliding_top250_placement
+entry_interface,10,1,0.1,0.12210000000000003,0.3,0.8190008189941111,0.7226386806596702,unbiased_sliding_best_window_top250_placement
+polymerase_replicase,30,10,0.3333333333333333,0.7220666666666666,0.8333333333333334,0.4616378912374735,1.0,unbiased_sliding_top250_placement
+polymerase_replicase,10,8,0.8,0.7171,0.9,1.1156045181967431,0.4267866066966517,unbiased_sliding_best_window_top250_placement
+host_interaction_broad,30,17,0.5666666666666667,0.8842833333333335,0.9666666666666667,0.6408202499191726,1.0,unbiased_sliding_top250_placement
+host_interaction_broad,10,9,0.9,0.8818500000000001,1.0,1.0205817315858472,0.6671664167916042,unbiased_sliding_best_window_top250_placement

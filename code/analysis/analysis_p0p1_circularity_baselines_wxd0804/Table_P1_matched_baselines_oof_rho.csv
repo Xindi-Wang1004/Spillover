@@ -1,0 +1,13 @@
+features,target,cv,rho,p,n
+evo_embedding,spillover_total,shuffle_KFold,0.7470316450125902,8.294896166854597e-114,632
+evo_embedding,spillover_total,GroupKFold_organism,0.3106124073419487,1.3306157385217187e-15,632
+evo_embedding,spillover_host_score,GroupKFold_organism,0.21429245411585454,5.331601665646821e-08,632
+evo_embedding,total_ablated_circular_factors,GroupKFold_organism,0.08177594923685114,0.03986077344640772,632
+taxonomy_length_GC,spillover_total,shuffle_KFold,0.8731162522078869,9.808246544531388e-199,632
+taxonomy_length_GC,spillover_total,GroupKFold_organism,0.1456838398767478,0.00023802870194894766,632
+taxonomy_length_GC,spillover_host_score,GroupKFold_organism,0.375164088707852,1.4850340377178833e-22,632
+taxonomy_length_GC,total_ablated_circular_factors,GroupKFold_organism,0.5962914573285628,4.1413579598643935e-62,632
+kmer3_freq,spillover_total,shuffle_KFold,0.8896921844352527,1.0885353076940664e-216,632
+kmer3_freq,spillover_total,GroupKFold_organism,-0.18547130122296338,2.676078905318814e-06,632
+kmer3_freq,spillover_host_score,GroupKFold_organism,-0.2771665954008782,1.307596071759104e-12,632
+kmer3_freq,total_ablated_circular_factors,GroupKFold_organism,0.06707063460382513,0.09204858316529275,632

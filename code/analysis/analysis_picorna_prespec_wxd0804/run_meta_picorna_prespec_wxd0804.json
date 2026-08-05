@@ -1,0 +1,53 @@
+{
+  "frozen_registry": "REPRO_REGISTRY_picorna_prespec_wxd0804.md",
+  "frozen_date": "2026-08-04",
+  "primary_model": "regression",
+  "descriptive_model": "multitask",
+  "classes_prespecified": [
+    "entry_interface",
+    "polymerase_replicase",
+    "other"
+  ],
+  "window_design": "sparse_sliding_3_windows_peakfrag_mirrors_CoV_OR36",
+  "dense_W5_status": "deferred_no_dense_tracks",
+  "regression_meta": {
+    "model": "regression",
+    "mean_frac_entry": 0.3555253841719761,
+    "sign_test_entry_p_vs_coverage": 3.2263103683654496e-05,
+    "sign_test_entry_p_vs_0.5_anticonservative": 0.0009765625,
+    "n_top_entry": 10,
+    "n_genomes": 10
+  },
+  "multitask_meta": {
+    "model": "multitask",
+    "mean_frac_entry": 0.3555253841719761,
+    "sign_test_entry_p_vs_coverage": 0.0006171088637232523,
+    "sign_test_entry_p_vs_0.5_anticonservative": 0.0107421875,
+    "n_top_entry": 9,
+    "n_genomes": 10
+  },
+  "primary_entry_interface": {
+    "class": "entry_interface",
+    "high_in": 10,
+    "high_out": 0,
+    "low_in": 10,
+    "low_out": 10,
+    "odds_ratio": NaN,
+    "odds_ratio_haldane": 21.0,
+    "p_fisher": 0.010993737230618788,
+    "n_genomes": 10,
+    "n_top_in_class": 10,
+    "contingency": [
+      10,
+      0,
+      10,
+      10
+    ],
+    "q_bh_across_3_classes": 0.01649060584592818,
+    "model": "regression",
+    "role": "primary"
+  },
+  "concordance_frac": 0.9,
+  "n_accessions": 10,
+  "note": "Dense equal-partition W=5 not run: no dense stitched tracks for this panel. Primary mirrors main-text CoV sparse-window design. Report regression as-is; do not switch primary to multitask."
+}

@@ -1,0 +1,32 @@
+factor_name,n_rows_with_factor,is_circular_flag,is_host_axis
+Agricultural system change in host ecosystem,889,False,False
+Animal to human transmission,889,True,False
+Deforestation in host ecosystem,889,False,False
+Duration of virus species infection in humans,889,True,False
+Envelope status of the virus,889,False,False
+Epidemicity of the virus species,889,True,False
+Frequency of interaction between domestic animals and humans in the host ecosystem,889,False,False
+Frequency of interaction between wild animals and humans in the host ecosystem,889,False,False
+Genetic relatedness between the host species and humans,889,False,True
+Genome classification of the virus,889,False,False
+Geography of the host(s),889,False,True
+Geography of the virus in animals,889,False,False
+Host plasticity - No. of orders,889,False,True
+Host plasticity - No. of species,889,False,True
+Human population density in host ecosystem,889,False,False
+Human to human transmission,889,True,False
+Intimacy of interaction between domestic animals and humans in the host ecosystem,889,False,False
+Intimacy of interaction between wild animals and humans in the host ecosystem,889,False,False
+Land use in host ecosystem,889,False,False
+Livestock density in host ecosystem,889,False,False
+Number of primary high-risk disease transmission interfaces where the virus has been detected,889,False,False
+Pandemic virus,889,True,False
+Proportion of known human pathogens in the viral family,889,True,False
+Proportion of virus species known to infect humans in the viral family,889,True,False
+Proportion of virus species known to infect terrestrial mammals (excluding humans) in the viral family,889,False,False
+Proportion of viruses within a viral family that are known to infect more than 1 host species,889,False,False
+Transmission mode of the virus,889,False,False
+Urbanization in host ecosystem,889,False,False
+Viral genome segmentation,889,False,False
+Virus species infectivity in humans,889,True,False
+Virus species infectivity in terrestrial mammals (excluding humans),889,False,False

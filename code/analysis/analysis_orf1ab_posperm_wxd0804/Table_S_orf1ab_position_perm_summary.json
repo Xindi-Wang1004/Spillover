@@ -1,0 +1,41 @@
+{
+  "analysis": "orf1ab_top_window_position_permutation",
+  "seed": 42,
+  "B": 10000,
+  "class": "polymerase_replicase",
+  "contrast": "top1_vs_rest by window_attr_sum",
+  "observed_2x2": {
+    "high_in": 8,
+    "high_out": 2,
+    "low_in": 2,
+    "low_out": 18
+  },
+  "OR_obs_raw": 36.0,
+  "OR_obs_haldane": 25.16,
+  "fisher_p_obs": 0.00029126295992862414,
+  "null_OR_haldane_mean": 1.6673143919753788,
+  "null_OR_haldane_p2.5": 0.19113573407202217,
+  "null_OR_haldane_p50": 0.84,
+  "null_OR_haldane_p97.5": 5.296296296296297,
+  "empirical_two_sided_p": 0.004299570042995701,
+  "count_convention": "(1 + #{|log OR_null| >= |log OR_obs|}) / (B + 1)",
+  "design_baseline": {
+    "n_genomes": 10,
+    "n_windows": 30,
+    "n_top": 10,
+    "n_low": 20,
+    "top_pol_count": 8,
+    "low_pol_count": 2,
+    "mean_frac_pol_low_peakfrag": 0.1436,
+    "mean_frac_pol_top_peakfrag": 0.8204,
+    "low_windows_ge50pct_orf1ab": 2,
+    "top_window_index_counts": {
+      "0": 1,
+      "1": 8,
+      "2": 1
+    }
+  },
+  "gate": "keep_OR36_primary",
+  "timestamp_utc": "2026-08-05T10:36:49.528652+00:00",
+  "input": "sliding_fragments_reannotated.csv"
+}

@@ -1,0 +1,11 @@
+accession,regression_best_window,multitask_best_window,same_best_window,regression_best_window_cds_class,multitask_best_window_cds_class,regression_top_fragment_class,multitask_top_fragment_class,same_top_fragment_class,concordance_note
+EF065509,1,1,True,ORF1ab,ORF1ab,ORF1ab,ORF1ab,True,concordant
+GU190215,1,1,True,ORF1ab,ORF1ab,ORF1ab,ORF1ab,True,concordant
+KF268337,1,1,True,ORF1ab,ORF1ab,ORF1ab,ORF1ab,True,concordant
+MF370205,2,2,True,other,other,S_gene_non_RBD,S_gene_non_RBD,True,concordant
+MG762674,1,1,True,ORF1ab,ORF1ab,ORF1ab,ORF1ab,True,concordant
+MT549854,1,2,False,ORF1ab,other,ORF1ab,other,False,best-window and top-fragment class shift; not spike-only/RBD reversal
+MW218395,0,0,True,ORF1ab,ORF1ab,other,other,True,concordant
+NC_048211,1,2,False,ORF1ab,other,ORF1ab,S_gene_non_RBD,False,best-window and top-fragment class shift; not spike-only/RBD reversal
+ON648240,1,1,True,ORF1ab,ORF1ab,ORF1ab,ORF1ab,True,concordant
+OQ297728,1,1,True,ORF1ab,ORF1ab,ORF1ab,ORF1ab,True,concordant

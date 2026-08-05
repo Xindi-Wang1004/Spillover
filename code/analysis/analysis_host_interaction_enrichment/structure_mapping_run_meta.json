@@ -1,0 +1,11 @@
+{
+  "finished": "2026-07-23T16:44:03.969080+00:00",
+  "outputs": {
+    "Table37": "/home/wangxindi/evo-main/paper/bib_tables/Table37_structure_mapping_light.csv",
+    "Figure_S12": "/home/wangxindi/evo-main/paper/bib_figures/SupplementaryFigure_S12_structure_mapping_schematic.png"
+  },
+  "wording_guidance": [
+    "Prefer: sequence changes at putative host-interaction regions",
+    "Avoid: interface destabilization causes spillover"
+  ]
+}

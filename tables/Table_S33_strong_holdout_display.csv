@@ -1,0 +1,10 @@
+holdout,split_detail,n_year_available,n_train,n_test,spearman,spearman_p,r2,status
+temporal_median_early_to_late,median_year=2022,632,342,290,0.7591213680225662,1.2359724620961108e-55,0.5374004185116397,ok
+temporal_organism_disjoint_early_to_late,org_first_year_median=2012.0; n_early_orgs=13; n_late_orgs=12,632,379,253,0.1577916022853692,0.0119653653448466,-1.0265944100110629,ok
+temporal_family_disjoint_early_to_late,"family_first_year_median=2007.0; early_families=['Coronaviridae', 'Picornaviridae', 'Retroviridae', 'Sedoreoviridae']; late_families=['Adenoviridae', 'Astroviridae', 'Poxviridae']",632,369,263,0.8379285708643744,1.3516939409864216e-70,-7.94339163903669,ok
+cross_host_train_0.0_test_other,train Host_label=0.0; test=[1.0],632,258,374,0.1304619734881823,0.0115576246875316,-0.1738778489339594,ok
+cross_host_train_1.0_test_other,train Host_label=1.0; test=[0.0],632,374,258,0.5672549049601615,2.2684446151325364e-23,0.1245252732868769,ok
+leave_one_family_out_aggregate,n_groups=7,632,632,529,0.032737029220555,0.4524288349800094,-2.201589007461104,ok
+leave_one_family_out_mean_within_group_rho,n_ok_groups=5/7,632,632,529,0.445821478797675,,,ok
+temporal_early_nonCoronaviridae_to_late_Coronaviridae,median_year=2022,632,272,54,0.5578432962062153,1.1738726761789452e-05,-3.8426927046392834,ok
+leave_one_genus_out_mean_within_group_rho,n_ok_groups=4/12,632,632,323,-0.0128646773654851,,,ok

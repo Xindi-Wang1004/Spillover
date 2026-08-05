@@ -1,0 +1,17 @@
+[
+  {
+    "path": "classification_genome_fusion_lora/best_classifier_genome_fusion_20260501_042922.pth",
+    "sha256": "6b577e9803d95d020f8576b5759601cd010a8366cfca647a9222627b764f2fb7",
+    "bytes": 12942811954
+  },
+  {
+    "path": "multitask_genome_fusion_alpha0.5_lora/best_multitask_genome_fusion_20260501_043813.pth",
+    "sha256": "b649591d6ad07d96d24060fc12f33e74a7019cd83c153edf17aabd20d12dd8bb",
+    "bytes": 12943270828
+  },
+  {
+    "path": "regression_genome_fusion_lora/best_genome_fusion_20260501_042424.pth",
+    "sha256": "84743b846ef7b80166c56793714faeedfeb621694628501d2a4b3a53357efd12",
+    "bytes": 12942803568
+  }
+]

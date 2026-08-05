@@ -1,0 +1,15 @@
+{
+  "finished": "2026-07-23T16:44:02.812522+00:00",
+  "n_perm": 1000,
+  "n_rows": 65,
+  "outputs": {
+    "Table32": "/home/wangxindi/evo-main/paper/bib_tables/Table32_known_loci_attribution_scores.csv",
+    "Table33": "/home/wangxindi/evo-main/paper/bib_tables/Table33_known_loci_enrichment_summary.csv",
+    "Figure_S10": "/home/wangxindi/evo-main/paper/bib_figures/SupplementaryFigure_S10_known_loci_attribution.png"
+  },
+  "notes": [
+    "Influenza IG tracks are HA-centered windows; PB2 loci may fall outside coverage.",
+    "CoV gene_frac loci are resolved from GenBank S/ORF1ab spans.",
+    "Prefer dense_stitched tracks when available; otherwise spike-centered windows."
+  ]
+}

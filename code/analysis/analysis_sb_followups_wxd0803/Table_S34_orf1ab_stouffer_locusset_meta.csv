@@ -1,0 +1,2 @@
+n_accessions,median_mass_enrichment,n_sig_p005,T_obs,p_asym_one_sided,p_meta_locus_set,T_null_mean,T_null_p95,n_perm_shift,n_perm_meta,n_perm_shift_meta_inner,coord_source
+11,1.14988473536335,2,1.9466376552310622,0.025789095424698334,0.06387225548902195,0.38823535085653227,2.0798920472163807,2000,500,400,Table32_known_loci_attribution_scores.csv dense_stitched

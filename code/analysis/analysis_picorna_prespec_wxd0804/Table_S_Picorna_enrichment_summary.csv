@@ -1,0 +1,7 @@
+class,high_in,high_out,low_in,low_out,odds_ratio,odds_ratio_haldane,p_fisher,n_genomes,n_top_in_class,contingency,q_bh_across_3_classes,model,role
+entry_interface,10,0,10,10,,21.0,0.010993737230618788,10,10,"[10, 0, 10, 10]",0.01649060584592818,regression,primary
+polymerase_replicase,0,10,0,20,,1.9523809523809523,1.0,10,0,"[0, 10, 0, 20]",1.0,regression,primary
+other,0,10,10,10,0.0,0.047619047619047616,0.010993737230618788,10,0,"[0, 10, 10, 10]",0.01649060584592818,regression,primary
+entry_interface,9,1,10,10,9.0,6.333333333333333,0.048513106084320474,10,9,"[9, 1, 10, 10]",0.07276965912648072,multitask,descriptive_concordance
+polymerase_replicase,0,10,0,20,,1.9523809523809523,1.0,10,0,"[0, 10, 0, 20]",1.0,multitask,descriptive_concordance
+other,1,9,10,10,0.1111111111111111,0.15789473684210525,0.048513106084320474,10,1,"[1, 9, 10, 10]",0.07276965912648072,multitask,descriptive_concordance

@@ -1,0 +1,8 @@
+{
+  "finished": "2026-07-23T16:43:50.485501+00:00",
+  "n_tracks": 11,
+  "outputs": {
+    "Table39": "/home/wangxindi/evo-main/paper/bib_tables/Table39_dense_stitched_attr_enrichment.csv",
+    "Table40": "/home/wangxindi/evo-main/paper/bib_tables/Table40_dense_stitched_permutation_summary.csv"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "filter": "human_virus==0",
+  "B": 2000,
+  "rows": [
+    {
+      "target": "spillover_total",
+      "cv": "GroupKFold_organism",
+      "n_seq": 56,
+      "n_groups": 12,
+      "n_splits": 5,
+      "rho_point": 0.5121075103284048,
+      "n_boot": 2000,
+      "ci95_low": -0.24671845732049497,
+      "ci95_high": 0.7665926918413016,
+      "boot_median": 0.4184713542171278
+    },
+    {
+      "target": "spillover_host_score",
+      "cv": "GroupKFold_organism",
+      "n_seq": 56,
+      "n_groups": 12,
+      "n_splits": 5,
+      "rho_point": 0.7025493931895257,
+      "n_boot": 2000,
+      "ci95_low": -0.11587415847816143,
+      "ci95_high": 0.841523730320031,
+      "boot_median": 0.6191601290369106
+    },
+    {
+      "target": "total_ablated_circular",
+      "cv": "GroupKFold_organism",
+      "n_seq": 56,
+      "n_groups": 12,
+      "n_splits": 5,
+      "rho_point": 0.5112814699128887,
+      "n_boot": 2000,
+      "ci95_low": -0.2263095097031673,
+      "ci95_high": 0.7618832109107144,
+      "boot_median": 0.4177183023235882
+    }
+  ]
+}

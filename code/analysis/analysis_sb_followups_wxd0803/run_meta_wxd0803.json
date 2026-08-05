@@ -1,0 +1,88 @@
+{
+  "started": "2026-08-03T10:14:21.309585+00:00",
+  "seed": 42,
+  "analysis3": {
+    "n_accessions": 11,
+    "median_mass_enrichment": 1.14988473536335,
+    "n_sig_p005": 2,
+    "T_obs": 1.9466376552310622,
+    "p_asym_one_sided": 0.025789095424698334,
+    "p_meta_locus_set": 0.06387225548902195,
+    "T_null_mean": 0.38823535085653227,
+    "T_null_p95": 2.0798920472163807,
+    "n_perm_shift": 2000,
+    "n_perm_meta": 500,
+    "n_perm_shift_meta_inner": 400,
+    "coord_source": "Table32_known_loci_attribution_scores.csv dense_stitched"
+  },
+  "analysis2": {
+    "wilcoxon": [
+      {
+        "feature": "cpa",
+        "n": 11,
+        "median_delta": -0.005692344727435919,
+        "wilcoxon_p": 0.0419921875
+      },
+      {
+        "feature": "cpg",
+        "n": 11,
+        "median_delta": 0.001284490466553427,
+        "wilcoxon_p": 0.0830078125
+      },
+      {
+        "feature": "gc",
+        "n": 11,
+        "median_delta": 0.0012199311881186392,
+        "wilcoxon_p": 0.240234375
+      }
+    ],
+    "composition_predicts_high_window_oof_auc": 0.5991735537190083,
+    "fisher_high_vs_polymerase_like_OR": 0.0,
+    "fisher_p": 0.2755376344086022,
+    "logit_pol_coef_unadj": -0.728922575442649,
+    "logit_pol_coef_adj_comp": -0.68254097851292,
+    "logit_OR_unadj": 0.4824284904815185,
+    "logit_OR_adj_comp": 0.5053313235938214,
+    "n_windows": 33,
+    "note": "Windows = genome thirds ranked by mean |IG|; polymerase-like = \u226550% overlap with ORF1ab C-terminal third."
+  },
+  "analysis1": {
+    "rho_obs_group_oof": 0.3106124073419487,
+    "tip_perm_within_family_p": 0.00997506234413965,
+    "tip_perm_null_mean": 0.03096330479949524,
+    "tip_perm_null_p95": 0.2190883367009726,
+    "rho_after_family_residualize_pca20": -0.3120387049360096,
+    "pca_block_partial_F_p": 3.4772137962522584e-107,
+    "coronaviridae_within": {
+      "n": 124,
+      "rho_obs": -0.6249703117139654,
+      "p_tip_perm": 0.0024937655860349127
+    },
+    "note": "Tip permutations shuffle SpillOver within family; PCA+family residualization is a relatedness proxy pending formal PGLS trees."
+  },
+  "analysis5": {
+    "by_fragment": [
+      {
+        "fragment": "high",
+        "n_pairs": 10,
+        "median_dNdS": 16.35742315238718,
+        "median_aa_diffs": 3091.0,
+        "mean_dNdS": 15.960265741198148
+      },
+      {
+        "fragment": "low",
+        "n_pairs": 10,
+        "median_dNdS": 13.367023688087952,
+        "median_aa_diffs": 3045.5,
+        "mean_dNdS": 13.081388144762936
+      }
+    ],
+    "high_vs_low_contrast": {
+      "n_pairs": 10,
+      "median_delta_dNdS_high_minus_low": 2.95677737611976,
+      "wilcoxon_p": 0.037109375
+    },
+    "note": "Simplified Nei-Gojobori on unaligned length-matched thirds; interpret cautiously."
+  },
+  "finished": "2026-08-03T10:21:04.685920+00:00"
+}

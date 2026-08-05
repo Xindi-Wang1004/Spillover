@@ -1,0 +1,11 @@
+accession,model,top_window_index,window_start,window_end,top_fragment_start,top_fragment_end,top_fragment_class,window_attr_sum,mt_top_class,concordant_top_class
+KF958310,regression,2,2991,7087,2991,3241,entry_interface,52.075451698721736,entry_interface,True
+KF958311,regression,1,1510,5606,1522,1772,entry_interface,78.18884847965091,other,False
+KJ675505,regression,2,3027,7123,3033,3283,entry_interface,40.38833822666493,entry_interface,True
+KJ675506,regression,1,1508,5604,1516,1766,entry_interface,67.99158236023504,entry_interface,True
+KJ675507,regression,2,2994,7090,2994,3244,entry_interface,39.55089462426258,entry_interface,True
+KP890662,regression,2,2977,7073,3081,3331,entry_interface,58.47236718804925,entry_interface,True
+KP890663,regression,1,1514,5610,1528,1778,entry_interface,38.21567756470176,entry_interface,True
+KY369879,regression,2,3001,7097,3035,3285,entry_interface,39.44682997238124,entry_interface,True
+KY369880,regression,2,2975,7071,2975,3225,entry_interface,34.30679387696728,entry_interface,True
+MH330336,regression,2,3010,7106,3010,3260,entry_interface,41.21272416380816,entry_interface,True

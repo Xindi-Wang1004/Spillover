@@ -1,0 +1,332 @@
+{
+  "seed": 42,
+  "n_emb": 632,
+  "circular_patterns": [
+    "infectivity in humans",
+    "known to infect humans in the viral family",
+    "known human pathogens in the viral family",
+    "animal to human transmission",
+    "human to human transmission",
+    "duration of virus species infection in humans",
+    "epidemicity of the virus species",
+    "pandemic virus"
+  ],
+  "host_axis_patterns": [
+    "host plasticity - no\\. of species",
+    "host plasticity - no\\. of orders",
+    "geography of the host",
+    "genetic relatedness between the host species and humans"
+  ],
+  "fidelity": {
+    "corr_total_recon_vs_table": 0.9999999999999999,
+    "corr_total_recon_vs_emb_spillover_total": 0.9999999999999999,
+    "corr_host_axis_vs_emb_host": 0.5609970040097452,
+    "corr_ablated_vs_total": 0.7977609568880772,
+    "median_circular_mass_fraction": 0.21182505835878515
+  },
+  "n_circular_factor_types": 8,
+  "circular_factor_names": [
+    "Animal to human transmission",
+    "Duration of virus species infection in humans",
+    "Epidemicity of the virus species",
+    "Human to human transmission",
+    "Pandemic virus",
+    "Proportion of known human pathogens in the viral family",
+    "Proportion of virus species known to infect humans in the viral family",
+    "Virus species infectivity in humans"
+  ],
+  "host_axis_factor_names": [
+    "Genetic relatedness between the host species and humans",
+    "Geography of the host(s)",
+    "Host plasticity - No. of orders",
+    "Host plasticity - No. of species"
+  ],
+  "p0_highlights": [
+    {
+      "target": "spillover_total",
+      "cv": "shuffle_KFold",
+      "rho": 0.7470316450125902,
+      "p": 8.294896166854597e-114,
+      "n": 632,
+      "n_eligible": NaN
+    },
+    {
+      "target": "spillover_total",
+      "cv": "GroupKFold_organism",
+      "rho": 0.3106124073419487,
+      "p": 1.3306157385217187e-15,
+      "n": 632,
+      "n_eligible": NaN
+    },
+    {
+      "target": "spillover_host_score",
+      "cv": "shuffle_KFold",
+      "rho": 0.8003057327821258,
+      "p": 4.4431720829227716e-142,
+      "n": 632,
+      "n_eligible": NaN
+    },
+    {
+      "target": "spillover_host_score",
+      "cv": "GroupKFold_organism",
+      "rho": 0.21429245411585454,
+      "p": 5.331601665646821e-08,
+      "n": 632,
+      "n_eligible": NaN
+    },
+    {
+      "target": "spillover_virus_score",
+      "cv": "shuffle_KFold",
+      "rho": 0.538160839559125,
+      "p": 9.764612291731844e-49,
+      "n": 632,
+      "n_eligible": NaN
+    },
+    {
+      "target": "spillover_virus_score",
+      "cv": "GroupKFold_organism",
+      "rho": -0.07577432305567722,
+      "p": 0.05692272442711842,
+      "n": 632,
+      "n_eligible": NaN
+    },
+    {
+      "target": "spillover_env_score",
+      "cv": "shuffle_KFold",
+      "rho": 0.5774296766964638,
+      "p": 1.7851325827489644e-57,
+      "n": 632,
+      "n_eligible": NaN
+    },
+    {
+      "target": "spillover_env_score",
+      "cv": "GroupKFold_organism",
+      "rho": -0.6522876314191496,
+      "p": 7.380054084347871e-78,
+      "n": 632,
+      "n_eligible": NaN
+    },
+    {
+      "target": "total_recon_from_factors",
+      "cv": "shuffle_KFold",
+      "rho": 0.7470316450125902,
+      "p": 8.294896166854597e-114,
+      "n": 632,
+      "n_eligible": NaN
+    },
+    {
+      "target": "total_recon_from_factors",
+      "cv": "GroupKFold_organism",
+      "rho": 0.3106124073419487,
+      "p": 1.3306157385217187e-15,
+      "n": 632,
+      "n_eligible": NaN
+    },
+    {
+      "target": "total_ablated_circular_factors",
+      "cv": "shuffle_KFold",
+      "rho": 0.7131395750694183,
+      "p": 2.8789076758222044e-99,
+      "n": 632,
+      "n_eligible": NaN
+    },
+    {
+      "target": "total_ablated_circular_factors",
+      "cv": "GroupKFold_organism",
+      "rho": 0.08177594923685114,
+      "p": 0.03986077344640772,
+      "n": 632,
+      "n_eligible": NaN
+    },
+    {
+      "target": "host_axis_recon",
+      "cv": "shuffle_KFold",
+      "rho": 0.9358589933469275,
+      "p": 1.3924501416069445e-287,
+      "n": 632,
+      "n_eligible": NaN
+    },
+    {
+      "target": "host_axis_recon",
+      "cv": "GroupKFold_organism",
+      "rho": 0.6974895077317519,
+      "p": 3.0221276280827738e-93,
+      "n": 632,
+      "n_eligible": NaN
+    },
+    {
+      "target": "spillover_total_resid_Host_label",
+      "cv": "shuffle_KFold",
+      "rho": 0.7489721557882757,
+      "p": 1.0377793839550126e-114,
+      "n": 632,
+      "n_eligible": NaN
+    },
+    {
+      "target": "spillover_total_resid_Host_label",
+      "cv": "GroupKFold_organism",
+      "rho": 0.2609407140789013,
+      "p": 2.687843165589628e-11,
+      "n": 632,
+      "n_eligible": NaN
+    },
+    {
+      "target": "spillover_host_resid_Host_label",
+      "cv": "shuffle_KFold",
+      "rho": 0.8000324080397262,
+      "p": 6.51907097057357e-142,
+      "n": 632,
+      "n_eligible": NaN
+    },
+    {
+      "target": "spillover_host_resid_Host_label",
+      "cv": "GroupKFold_organism",
+      "rho": 0.28858913851267326,
+      "p": 1.375841627533795e-13,
+      "n": 632,
+      "n_eligible": NaN
+    },
+    {
+      "target": "total_ablated_resid_Host_label",
+      "cv": "shuffle_KFold",
+      "rho": 0.7048423606433254,
+      "p": 5.0218398681327795e-96,
+      "n": 632,
+      "n_eligible": NaN
+    },
+    {
+      "target": "total_ablated_resid_Host_label",
+      "cv": "GroupKFold_organism",
+      "rho": 0.14011971632969114,
+      "p": 0.0004108324774360425,
+      "n": 632,
+      "n_eligible": NaN
+    },
+    {
+      "target": "spillover_total_nonHumanVirus",
+      "cv": "GroupKFold_organism",
+      "rho": 0.5121075103284048,
+      "p": 5.4727160610466576e-05,
+      "n": 56,
+      "n_eligible": 56.0
+    },
+    {
+      "target": "total_ablated_nonHumanVirus",
+      "cv": "GroupKFold_organism",
+      "rho": 0.5112814699128887,
+      "p": 5.652681584374648e-05,
+      "n": 56,
+      "n_eligible": 56.0
+    },
+    {
+      "target": "spillover_host_nonHumanVirus",
+      "cv": "GroupKFold_organism",
+      "rho": 0.7025493931895257,
+      "p": 1.5897010439206575e-09,
+      "n": 56,
+      "n_eligible": 56.0
+    }
+  ],
+  "p1_highlights": [
+    {
+      "features": "evo_embedding",
+      "target": "spillover_total",
+      "cv": "shuffle_KFold",
+      "rho": 0.7470316450125902,
+      "p": 8.294896166854597e-114,
+      "n": 632
+    },
+    {
+      "features": "evo_embedding",
+      "target": "spillover_total",
+      "cv": "GroupKFold_organism",
+      "rho": 0.3106124073419487,
+      "p": 1.3306157385217187e-15,
+      "n": 632
+    },
+    {
+      "features": "evo_embedding",
+      "target": "spillover_host_score",
+      "cv": "GroupKFold_organism",
+      "rho": 0.21429245411585454,
+      "p": 5.331601665646821e-08,
+      "n": 632
+    },
+    {
+      "features": "evo_embedding",
+      "target": "total_ablated_circular_factors",
+      "cv": "GroupKFold_organism",
+      "rho": 0.08177594923685114,
+      "p": 0.03986077344640772,
+      "n": 632
+    },
+    {
+      "features": "taxonomy_length_GC",
+      "target": "spillover_total",
+      "cv": "shuffle_KFold",
+      "rho": 0.8731162522078869,
+      "p": 9.808246544531388e-199,
+      "n": 632
+    },
+    {
+      "features": "taxonomy_length_GC",
+      "target": "spillover_total",
+      "cv": "GroupKFold_organism",
+      "rho": 0.1456838398767478,
+      "p": 0.00023802870194894766,
+      "n": 632
+    },
+    {
+      "features": "taxonomy_length_GC",
+      "target": "spillover_host_score",
+      "cv": "GroupKFold_organism",
+      "rho": 0.375164088707852,
+      "p": 1.4850340377178833e-22,
+      "n": 632
+    },
+    {
+      "features": "taxonomy_length_GC",
+      "target": "total_ablated_circular_factors",
+      "cv": "GroupKFold_organism",
+      "rho": 0.5962914573285628,
+      "p": 4.1413579598643935e-62,
+      "n": 632
+    },
+    {
+      "features": "kmer3_freq",
+      "target": "spillover_total",
+      "cv": "shuffle_KFold",
+      "rho": 0.8896921844352527,
+      "p": 1.0885353076940664e-216,
+      "n": 632
+    },
+    {
+      "features": "kmer3_freq",
+      "target": "spillover_total",
+      "cv": "GroupKFold_organism",
+      "rho": -0.18547130122296338,
+      "p": 2.676078905318814e-06,
+      "n": 632
+    },
+    {
+      "features": "kmer3_freq",
+      "target": "spillover_host_score",
+      "cv": "GroupKFold_organism",
+      "rho": -0.2771665954008782,
+      "p": 1.307596071759104e-12,
+      "n": 632
+    },
+    {
+      "features": "kmer3_freq",
+      "target": "total_ablated_circular_factors",
+      "cv": "GroupKFold_organism",
+      "rho": 0.06707063460382513,
+      "p": 0.09204858316529275,
+      "n": 632
+    }
+  ],
+  "cov_current_panel_n": 11,
+  "cov_overlap_n": 124,
+  "cov_expansion_candidate_rows": 19,
+  "note": "Ablation removes weighted factor mass for human-infection/transmission/epidemic factors parsed from SpilloverRankings Risk Levels text. Not a retrain of SpillOver; readout-only sensitivity on frozen embeddings. Narrative unchanged."
+}

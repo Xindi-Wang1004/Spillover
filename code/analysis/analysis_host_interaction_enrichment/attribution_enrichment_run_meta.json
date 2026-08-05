@@ -1,0 +1,181 @@
+{
+  "finished": "2026-07-23T10:54:24.788700+00:00",
+  "n_perm": 2000,
+  "seed": 42,
+  "top_q": 0.1,
+  "n_genomes": 17,
+  "outputs": {
+    "Table27": "/home/wangxindi/evo-main/paper/bib_tables/Table27_host_interaction_region_lengths.csv",
+    "Table28": "/home/wangxindi/evo-main/paper/bib_tables/Table28_spike_window_attr_enrichment.csv",
+    "Table29": "/home/wangxindi/evo-main/paper/bib_tables/Table29_spike_window_permutation.csv",
+    "Table30": "/home/wangxindi/evo-main/paper/bib_tables/Table30_sliding_fragment_placement_enrichment.csv",
+    "Table31": "/home/wangxindi/evo-main/paper/bib_tables/Table31_high_vs_low_attr_window_classes.csv",
+    "Figure_S9": "/home/wangxindi/evo-main/paper/bib_figures/SupplementaryFigure_S9_host_interaction_enrichment.png",
+    "sliding_reannotated": "/home/wangxindi/evo-main/paper/analysis_host_interaction_enrichment/sliding_fragments_reannotated.csv",
+    "pooled": "/home/wangxindi/evo-main/paper/analysis_host_interaction_enrichment/spike_window_enrichment_pooled.csv"
+  },
+  "placement_summary": [
+    {
+      "class": "entry_interface",
+      "n_fragments": 30,
+      "obs_hits": 4,
+      "obs_frac": 0.13333333333333333,
+      "null_mean": 0.1228,
+      "null_p95": 0.23333333333333334,
+      "enrichment_vs_null": 1.0857763300671623,
+      "p_value": 0.5237381309345327,
+      "analysis": "unbiased_sliding_top250_placement"
+    },
+    {
+      "class": "entry_interface",
+      "n_fragments": 10,
+      "obs_hits": 1,
+      "obs_frac": 0.1,
+      "null_mean": 0.12210000000000003,
+      "null_p95": 0.3,
+      "enrichment_vs_null": 0.8190008189941111,
+      "p_value": 0.7226386806596702,
+      "analysis": "unbiased_sliding_best_window_top250_placement"
+    },
+    {
+      "class": "polymerase_replicase",
+      "n_fragments": 30,
+      "obs_hits": 10,
+      "obs_frac": 0.3333333333333333,
+      "null_mean": 0.7220666666666666,
+      "null_p95": 0.8333333333333334,
+      "enrichment_vs_null": 0.4616378912374735,
+      "p_value": 1.0,
+      "analysis": "unbiased_sliding_top250_placement"
+    },
+    {
+      "class": "polymerase_replicase",
+      "n_fragments": 10,
+      "obs_hits": 8,
+      "obs_frac": 0.8,
+      "null_mean": 0.7171,
+      "null_p95": 0.9,
+      "enrichment_vs_null": 1.1156045181967431,
+      "p_value": 0.4267866066966517,
+      "analysis": "unbiased_sliding_best_window_top250_placement"
+    },
+    {
+      "class": "host_interaction_broad",
+      "n_fragments": 30,
+      "obs_hits": 17,
+      "obs_frac": 0.5666666666666667,
+      "null_mean": 0.8842833333333335,
+      "null_p95": 0.9666666666666667,
+      "enrichment_vs_null": 0.6408202499191726,
+      "p_value": 1.0,
+      "analysis": "unbiased_sliding_top250_placement"
+    },
+    {
+      "class": "host_interaction_broad",
+      "n_fragments": 10,
+      "obs_hits": 9,
+      "obs_frac": 0.9,
+      "null_mean": 0.8818500000000001,
+      "null_p95": 1.0,
+      "enrichment_vs_null": 1.0205817315858472,
+      "p_value": 0.6671664167916042,
+      "analysis": "unbiased_sliding_best_window_top250_placement"
+    }
+  ],
+  "high_vs_low_summary": [
+    {
+      "class": "entry_interface",
+      "high_in": 1,
+      "high_out": 9,
+      "low_in": 3,
+      "low_out": 17,
+      "odds_ratio": 0.6296296296296297,
+      "p_fisher": 1.0
+    },
+    {
+      "class": "polymerase_replicase",
+      "high_in": 8,
+      "high_out": 2,
+      "low_in": 2,
+      "low_out": 18,
+      "odds_ratio": 36.0,
+      "p_fisher": 0.00029126295992862707
+    },
+    {
+      "class": "host_interaction_broad",
+      "high_in": 9,
+      "high_out": 1,
+      "low_in": 8,
+      "low_out": 12,
+      "odds_ratio": 13.5,
+      "p_fisher": 0.0174055829228243
+    }
+  ],
+  "pooled_spike_window": [
+    {
+      "class": "entry_interface",
+      "n_accessions": 10,
+      "median_mass_enrichment": 0.9739664847749929,
+      "mean_mass_enrichment": 1.0589753638050978,
+      "median_p_circular_shift": 0.44127936031984005,
+      "n_sig_p005": 5,
+      "median_top_enrichment_vs_length": 0.9883818360753993,
+      "n_top_sig_hypergeom_005": 5
+    },
+    {
+      "class": "host_interaction_broad",
+      "n_accessions": 10,
+      "median_mass_enrichment": 1.0009273856925458,
+      "mean_mass_enrichment": 1.158926895862678,
+      "median_p_circular_shift": 0.3638180909545227,
+      "n_sig_p005": 4,
+      "median_top_enrichment_vs_length": 1.0009784735802114,
+      "n_top_sig_hypergeom_005": 4
+    },
+    {
+      "class": "other",
+      "n_accessions": 10,
+      "median_mass_enrichment": 0.13107828549096645,
+      "mean_mass_enrichment": 0.7576028718281884,
+      "median_p_circular_shift": 0.8575712143928036,
+      "n_sig_p005": 2,
+      "median_top_enrichment_vs_length": 0.01606148537362567,
+      "n_top_sig_hypergeom_005": 3
+    },
+    {
+      "class": "polymerase_replicase",
+      "n_accessions": 10,
+      "median_mass_enrichment": 0.0,
+      "mean_mass_enrichment": 3.4532378662129433,
+      "median_p_circular_shift": 1.0,
+      "n_sig_p005": 4,
+      "median_top_enrichment_vs_length": 0.0,
+      "n_top_sig_hypergeom_005": 4
+    },
+    {
+      "class": "rbd",
+      "n_accessions": 10,
+      "median_mass_enrichment": 0.0,
+      "mean_mass_enrichment": 0.04557868002025178,
+      "median_p_circular_shift": 1.0,
+      "n_sig_p005": 0,
+      "median_top_enrichment_vs_length": 0.0,
+      "n_top_sig_hypergeom_005": 0
+    },
+    {
+      "class": "structural_other",
+      "n_accessions": 10,
+      "median_mass_enrichment": 0.0,
+      "mean_mass_enrichment": 0.04149849583554717,
+      "median_p_circular_shift": 1.0,
+      "n_sig_p005": 0,
+      "median_top_enrichment_vs_length": 0.0,
+      "n_top_sig_hypergeom_005": 0
+    }
+  ],
+  "interpretation_notes": [
+    "Spike-centered IG windows were selected with a spike prior; Table28/29 are within-window only.",
+    "Table30/31 use unbiased sliding-window IG (Table19) and are the primary genome-wide enrichment tests.",
+    "host_interaction_broad = entry_interface \u222a polymerase_replicase \u222a accessory_immune."
+  ]
+}

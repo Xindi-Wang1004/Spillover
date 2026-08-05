@@ -1,0 +1,366 @@
+{
+  "accessions": [
+    "EF065509",
+    "GU190215",
+    "KF268336",
+    "KF268337",
+    "MF370205",
+    "MG762674",
+    "MT549854",
+    "MW218395",
+    "NC_048211",
+    "ON648240",
+    "OQ297728"
+  ],
+  "note": "Same 11 held-out CoV accessions; denser equal partitions of dense stitched attribution tracks (attr_abs_mean). Primary: top-1 window by mean |attr| vs rest; polymerase if >=50% overlap with ORF1ab/replicase GenBank mask (join-aware; T32 C-terminal-third back-calculation fallback). Parallel mask: ORF1ab C-terminal third. Not an expanded independent organism panel; attribution column bug in prior run (genomic_pos mistaken for attr) fixed.",
+  "summaries": [
+    {
+      "W": 3,
+      "mask_mode": "orf1ab_full",
+      "n_accessions": 11,
+      "contingency_high_pol_high_non_low_pol_low_non": [
+        9,
+        2,
+        12,
+        10
+      ],
+      "fisher_OR": 3.75,
+      "fisher_OR_haldane": 3.192,
+      "fisher_p": 0.2492200549849145,
+      "n_top_window_in_pol": 9,
+      "frac_top_in_pol": 0.8181818181818182,
+      "mean_mask_genome_fraction": 0.6869440138622394,
+      "binom_p_top_in_pol_vs_genome_frac": 0.280265607518293,
+      "sign_test_p_vs_0.5": 0.03271484375,
+      "stouffer_T_log_mask_enrich": -0.0868197961806613,
+      "stouffer_p": 0.5345926240190794
+    },
+    {
+      "W": 5,
+      "mask_mode": "orf1ab_full",
+      "n_accessions": 11,
+      "contingency_high_pol_high_non_low_pol_low_non": [
+        10,
+        1,
+        30,
+        14
+      ],
+      "fisher_OR": 4.666666666666667,
+      "fisher_OR_haldane": 3.3278688524590163,
+      "fisher_p": 0.25492255210545395,
+      "n_top_window_in_pol": 10,
+      "frac_top_in_pol": 0.9090909090909091,
+      "mean_mask_genome_fraction": 0.6869440138622394,
+      "binom_p_top_in_pol_vs_genome_frac": 0.09665456135555388,
+      "sign_test_p_vs_0.5": 0.005859375,
+      "stouffer_T_log_mask_enrich": -0.0868197961806613,
+      "stouffer_p": 0.5345926240190794
+    },
+    {
+      "W": 7,
+      "mask_mode": "orf1ab_full",
+      "n_accessions": 11,
+      "contingency_high_pol_high_non_low_pol_low_non": [
+        6,
+        5,
+        47,
+        19
+      ],
+      "fisher_OR": 0.4851063829787234,
+      "fisher_OR_haldane": 0.4851674641148325,
+      "fisher_p": 0.303324623937862,
+      "n_top_window_in_pol": 6,
+      "frac_top_in_pol": 0.5454545454545454,
+      "mean_mask_genome_fraction": 0.6869440138622394,
+      "binom_p_top_in_pol_vs_genome_frac": 0.906065882588254,
+      "sign_test_p_vs_0.5": 0.5,
+      "stouffer_T_log_mask_enrich": -0.0868197961806613,
+      "stouffer_p": 0.5345926240190794
+    },
+    {
+      "W": 10,
+      "mask_mode": "orf1ab_full",
+      "n_accessions": 11,
+      "contingency_high_pol_high_non_low_pol_low_non": [
+        5,
+        6,
+        70,
+        29
+      ],
+      "fisher_OR": 0.34523809523809523,
+      "fisher_OR_haldane": 0.35406437534097107,
+      "fisher_p": 0.10058981052061171,
+      "n_top_window_in_pol": 5,
+      "frac_top_in_pol": 0.45454545454545453,
+      "mean_mask_genome_fraction": 0.6869440138622394,
+      "binom_p_top_in_pol_vs_genome_frac": 0.9725902522416324,
+      "sign_test_p_vs_0.5": 0.7255859375,
+      "stouffer_T_log_mask_enrich": -0.0868197961806613,
+      "stouffer_p": 0.5345926240190794
+    },
+    {
+      "W": 3,
+      "mask_mode": "orf1ab_ct",
+      "n_accessions": 11,
+      "contingency_high_pol_high_non_low_pol_low_non": [
+        0,
+        11,
+        4,
+        18
+      ],
+      "fisher_OR": 0.0,
+      "fisher_OR_haldane": 0.178743961352657,
+      "fisher_p": 0.27553763440860213,
+      "n_top_window_in_pol": 0,
+      "frac_top_in_pol": 0.0,
+      "mean_mask_genome_fraction": 0.19205073461130748,
+      "binom_p_top_in_pol_vs_genome_frac": 1.0,
+      "sign_test_p_vs_0.5": 1.0,
+      "stouffer_T_log_mask_enrich": 1.4594406454857674,
+      "stouffer_p": 0.07222193291802037
+    },
+    {
+      "W": 5,
+      "mask_mode": "orf1ab_ct",
+      "n_accessions": 11,
+      "contingency_high_pol_high_non_low_pol_low_non": [
+        2,
+        9,
+        13,
+        31
+      ],
+      "fisher_OR": 0.5299145299145299,
+      "fisher_OR_haldane": 0.6140350877192983,
+      "fisher_p": 0.7075588059041535,
+      "n_top_window_in_pol": 2,
+      "frac_top_in_pol": 0.18181818181818182,
+      "mean_mask_genome_fraction": 0.19205073461130748,
+      "binom_p_top_in_pol_vs_genome_frac": 0.6538222051904887,
+      "sign_test_p_vs_0.5": 0.994140625,
+      "stouffer_T_log_mask_enrich": 1.4594406454857674,
+      "stouffer_p": 0.07222193291802037
+    },
+    {
+      "W": 7,
+      "mask_mode": "orf1ab_ct",
+      "n_accessions": 11,
+      "contingency_high_pol_high_non_low_pol_low_non": [
+        4,
+        7,
+        11,
+        55
+      ],
+      "fisher_OR": 2.857142857142857,
+      "fisher_OR_haldane": 2.8956521739130436,
+      "fisher_p": 0.20958945720172695,
+      "n_top_window_in_pol": 4,
+      "frac_top_in_pol": 0.36363636363636365,
+      "mean_mask_genome_fraction": 0.19205073461130748,
+      "binom_p_top_in_pol_vs_genome_frac": 0.14398058231675373,
+      "sign_test_p_vs_0.5": 0.88671875,
+      "stouffer_T_log_mask_enrich": 1.4594406454857674,
+      "stouffer_p": 0.07222193291802037
+    },
+    {
+      "W": 10,
+      "mask_mode": "orf1ab_ct",
+      "n_accessions": 11,
+      "contingency_high_pol_high_non_low_pol_low_non": [
+        0,
+        11,
+        17,
+        82
+      ],
+      "fisher_OR": 0.0,
+      "fisher_OR_haldane": 0.20496894409937888,
+      "fisher_p": 0.20858866579073568,
+      "n_top_window_in_pol": 0,
+      "frac_top_in_pol": 0.0,
+      "mean_mask_genome_fraction": 0.19205073461130748,
+      "binom_p_top_in_pol_vs_genome_frac": 1.0,
+      "sign_test_p_vs_0.5": 1.0,
+      "stouffer_T_log_mask_enrich": 1.4594406454857674,
+      "stouffer_p": 0.07222193291802037
+    },
+    {
+      "W": 3,
+      "mask_mode": "peakfrag250_orf1ab",
+      "n_accessions": 11,
+      "contingency_high_pol_high_non_low_pol_low_non": [
+        9,
+        2,
+        13,
+        9
+      ],
+      "fisher_OR": 3.1153846153846154,
+      "fisher_OR_haldane": 2.674074074074074,
+      "fisher_p": 0.2584726247298188,
+      "n_top_window_in_pol": 9,
+      "frac_top_in_pol": 0.8181818181818182,
+      "sign_test_p_vs_0.5": 0.03271484375
+    },
+    {
+      "W": 5,
+      "mask_mode": "peakfrag250_orf1ab",
+      "n_accessions": 11,
+      "contingency_high_pol_high_non_low_pol_low_non": [
+        10,
+        1,
+        24,
+        20
+      ],
+      "fisher_OR": 8.333333333333334,
+      "fisher_OR_haldane": 5.857142857142857,
+      "fisher_p": 0.03706293764416049,
+      "n_top_window_in_pol": 10,
+      "frac_top_in_pol": 0.9090909090909091,
+      "sign_test_p_vs_0.5": 0.005859375
+    },
+    {
+      "W": 7,
+      "mask_mode": "peakfrag250_orf1ab",
+      "n_accessions": 11,
+      "contingency_high_pol_high_non_low_pol_low_non": [
+        10,
+        1,
+        38,
+        28
+      ],
+      "fisher_OR": 7.368421052631579,
+      "fisher_OR_haldane": 5.181818181818182,
+      "fisher_p": 0.044720122361756334,
+      "n_top_window_in_pol": 10,
+      "frac_top_in_pol": 0.9090909090909091,
+      "sign_test_p_vs_0.5": 0.005859375
+    },
+    {
+      "W": 10,
+      "mask_mode": "peakfrag250_orf1ab",
+      "n_accessions": 11,
+      "contingency_high_pol_high_non_low_pol_low_non": [
+        8,
+        3,
+        61,
+        38
+      ],
+      "fisher_OR": 1.6612021857923498,
+      "fisher_OR_haldane": 1.5203252032520325,
+      "fisher_p": 0.5330138914473362,
+      "n_top_window_in_pol": 8,
+      "frac_top_in_pol": 0.7272727272727273,
+      "sign_test_p_vs_0.5": 0.11328125
+    }
+  ],
+  "gb_span_coverage": [
+    {
+      "accession": "EF065509",
+      "n_gb_spans": 1,
+      "spans": [
+        [
+          260,
+          21808
+        ]
+      ]
+    },
+    {
+      "accession": "GU190215",
+      "n_gb_spans": 1,
+      "spans": [
+        [
+          190,
+          21384
+        ]
+      ]
+    },
+    {
+      "accession": "KF268336",
+      "n_gb_spans": 1,
+      "spans": [
+        [
+          188,
+          21724
+        ]
+      ]
+    },
+    {
+      "accession": "KF268337",
+      "n_gb_spans": 1,
+      "spans": [
+        [
+          188,
+          21724
+        ]
+      ]
+    },
+    {
+      "accession": "MF370205",
+      "n_gb_spans": 1,
+      "spans": [
+        [
+          296,
+          20482
+        ]
+      ]
+    },
+    {
+      "accession": "MG762674",
+      "n_gb_spans": 1,
+      "spans": [
+        [
+          229,
+          20991
+        ]
+      ]
+    },
+    {
+      "accession": "MT549854",
+      "n_gb_spans": 1,
+      "spans": [
+        [
+          282,
+          20507
+        ]
+      ]
+    },
+    {
+      "accession": "MW218395",
+      "n_gb_spans": 1,
+      "spans": [
+        [
+          199,
+          21588
+        ]
+      ]
+    },
+    {
+      "accession": "NC_048211",
+      "n_gb_spans": 1,
+      "spans": [
+        [
+          211,
+          19185
+        ]
+      ]
+    },
+    {
+      "accession": "ON648240",
+      "n_gb_spans": 1,
+      "spans": [
+        [
+          240,
+          21521
+        ]
+      ]
+    },
+    {
+      "accession": "OQ297728",
+      "n_gb_spans": 1,
+      "spans": [
+        [
+          267,
+          12627
+        ]
+      ]
+    }
+  ]
+}
