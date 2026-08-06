@@ -2,20 +2,13 @@
 
 ## Build provenance
 
-This tree is produced by:
-
-```bash
-cd /home/wangxindi/evo-main
-bash paper/public_release/build_public_release.sh
-```
-
-Output: `Spillover_public/` at the repo root.  
-Build metadata: `RELEASE_meta.json`.
+This tree was assembled from the internal analysis workspace used for the manuscript
+(via `build_public_release.sh` in the release tooling).  
+Build metadata (if present): `RELEASE_meta.json`.
 
 ## Environment
 
-- Server: `10.40.1.16`
-- Conda env: `evo_design` (for full GPU pipelines)
+- Conda env: `evo_design` (for full GPU pipelines on the original compute host)
 - Python ≥3.10; `pip install -r requirements.txt` suffices for **statistical re-runs** on frozen embeddings
 
 Random seed **42** throughout (see `run_meta_*.json` in each `code/analysis/*` folder).
@@ -36,14 +29,15 @@ Random seed **42** throughout (see `run_meta_*.json` in each `code/analysis/*` f
 
 ## Path note
 
-Scripts may still reference `/home/wangxindi/evo-main` and `/home/wangxindi/evo/evo_data`.  
-For off-server use, set:
+Some analysis scripts retain absolute paths from the original workspace.  
+For local use, set:
 
 ```bash
 export SPILLOVER_ROOT="$(pwd)"
-# optional symlink for legacy paths:
-# ln -s "$SPILLOVER_ROOT" ~/evo-main
 ```
+
+and edit path constants in the relevant `run_*.py` / `run_all.py` to point at this tree
+(or the companion Zenodo checkpoint deposit).
 
 ## Science Bulletin data-availability statement (suggested)
 

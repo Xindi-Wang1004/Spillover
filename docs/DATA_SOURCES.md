@@ -23,5 +23,5 @@
 
 ## Model weights
 
-- Listed in `models/checkpoint_manifest.json` with source paths on the build server.
+- Listed in `models/checkpoint_manifest.json` (SHA256 checksums); full `.pth` weights on Zenodo (DOI: 10.5281/zenodo.21809791).
 - Evo backbone pretrained on prokaryotic OpenGenome (Nguyen et al., 2024); viral fine-tuning via LoRA.

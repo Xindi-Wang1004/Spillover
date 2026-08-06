@@ -4,7 +4,7 @@
 
 Wang, Luo, Li, Hon — *Science Bulletin*.
 
-Repository built from `/home/wangxindi/evo-main` on compute server 16.  
+Built from the internal analysis workspace used for the manuscript.  
 **Not** a dump of the whole project — only models, data, code, and tables used in the **final** manuscript.
 
 ## Quick check

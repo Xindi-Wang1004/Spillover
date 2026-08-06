@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Smoke-check Spillover_public(_git) after build on server 16."""
+"""Smoke-check Spillover_public(_git) after packaging."""
 from __future__ import annotations
 
 import json
