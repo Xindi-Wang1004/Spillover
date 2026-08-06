@@ -45,4 +45,4 @@ and edit path constants in the relevant `run_*.py` / `run_all.py` to point at th
 
 ## Contact
 
-Corresponding authors: Chitin Hon (cthon@must.edu.mo); Yixue Li (li_yixue@gzlab.ac.cn).
+Corresponding authors: Junyu Luo (luo_junyu@gzlab.ac.cn); Yixue Li (li_yixue@gzlab.ac.cn); Chitin Hon (cthon@must.edu.mo).
