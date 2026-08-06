@@ -47,7 +47,7 @@ export SPILLOVER_ROOT="$(pwd)"
 
 ## Science Bulletin data-availability statement (suggested)
 
-> Analysis code, fine-tuned model checkpoints, frozen embeddings, supplementary tables, and analysis outputs supporting the main and supplementary results are available at https://github.com/Xindi-Wang1004/Spillover. Third-party data (GISAID EpiFlu metadata) were used under their respective terms and are not redistributed.
+> Analysis code, frozen embeddings, supplementary tables, and analysis outputs supporting the main and supplementary results are available at https://github.com/Xindi-Wang1004/Spillover. Fine-tuned model checkpoints are archived at Zenodo (DOI: 10.5281/zenodo.21809791). Third-party data (GISAID EpiFlu metadata) were used under their respective terms and are not redistributed.
 
 ## Contact
 
