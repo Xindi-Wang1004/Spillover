@@ -25,7 +25,6 @@ python3 verify_release.py
 | `code/` | Host-interaction enrichment & known-loci scripts |
 | `tables/` | Whitelisted `bib_tables` + analysis outputs (single copy, de-duplicated) |
 | `figures/` | Main-text Figures 1–4 (+ GA if present) |
-| `manuscript/` | Final Word manuscript (if copied at build time) |
 | `docs/` | Reproducibility notes for reviewers and *Science Bulletin* |
 
 
