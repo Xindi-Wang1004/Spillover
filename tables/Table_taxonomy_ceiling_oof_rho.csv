@@ -1,0 +1,11 @@
+features,target,cv,rho,p,n,n_features,source
+taxonomy_family_only,spillover_total,shuffle_KFold,0.7851254012413497,3.316511720768939e-133,632,7.0,
+taxonomy_family_only,spillover_total,GroupKFold_organism,0.06022434161595751,0.13043410934874003,632,7.0,
+taxonomy_organism_only,spillover_total,shuffle_KFold,0.971163896093548,0.0,632,25.0,
+taxonomy_organism_only,spillover_total,GroupKFold_organism,-0.46285447301759425,7.103797653755899e-35,632,25.0,
+taxonomy_family_organism,spillover_total,shuffle_KFold,0.9781440029256673,0.0,632,32.0,
+taxonomy_family_organism,spillover_total,GroupKFold_organism,-0.05009637995511403,0.20850024926595642,632,32.0,
+taxonomy_length_GC,spillover_total,shuffle_KFold,0.8731162522078869,9.808246544531388e-199,632,,Table_P1_matched_baselines_oof_rho.csv
+taxonomy_length_GC,spillover_total,GroupKFold_organism,0.1456838398767478,0.0002380287019489,632,,Table_P1_matched_baselines_oof_rho.csv
+evo_embedding,spillover_total,shuffle_KFold,0.7470316450125902,8.294896166854597e-114,632,,Table_P1_matched_baselines_oof_rho.csv
+evo_embedding,spillover_total,GroupKFold_organism,0.3106124073419487,1.330615738521719e-15,632,,Table_P1_matched_baselines_oof_rho.csv
