@@ -27,6 +27,8 @@ def main() -> int:
     must(ROOT / "code" / "train" / "train_regression_genome_fusion_lora.py", "train script")
     must(ROOT / "docs" / "REPRODUCIBILITY.md", "docs")
     must(ROOT / "models" / "checkpoint_manifest.json", "checkpoint manifest")
+    must(ROOT / "transfer_GB" / "audit_toolkit" / "pyproject.toml", "genome-ml-reportcard")
+    must(ROOT / "transfer_GB" / "audit_toolkit" / "genome_ml_reportcard" / "cli.py", "reportcard CLI")
 
     orf = ROOT / "code" / "analysis" / "analysis_orf1ab_posperm_wxd0804"
     frag = orf / "sliding_fragments_reannotated.csv"

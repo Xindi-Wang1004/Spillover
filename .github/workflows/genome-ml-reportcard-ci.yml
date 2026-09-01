@@ -1,0 +1,33 @@
+name: genome-ml-reportcard CI
+
+on:
+  push:
+    paths:
+      - "transfer_GB/audit_toolkit/**"
+      - ".github/workflows/genome-ml-reportcard-ci.yml"
+  pull_request:
+    paths:
+      - "transfer_GB/audit_toolkit/**"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.11"]
+    defaults:
+      run:
+        working-directory: transfer_GB/audit_toolkit
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install package + pytest
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+      - name: Smoke tests
+        run: python tests/test_smoke.py
+      - name: Build sdist/wheel
+        run: pip install build && python -m build

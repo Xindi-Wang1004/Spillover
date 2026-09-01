@@ -1,0 +1,7 @@
+published_study,ref,audit_task,label_assignment,blocking_unit_audited,primary_metric,random_score,blocked_score,split_contrast,reanalysis_type
+Mollentze et al. 2021,[3],T03_REP,virus species,species (n≥2 genomes/species),AUROC,0.7,0.617,0.083,Same public genomes + labels; report-card random vs species-blocked probe
+Babayan et al. 2018,[4],T08,binary mammal vs other reservoir (Orphan excluded),Viral group / lineage (12 groups),AUROC,0.809,0.56,0.249,Same Babayan labels; species-singleton control (T05) vs lineage block
+Engqvist 2018 (OGT),[14],T01,species growth temperature (°C),species (100 species; 777 genomes),Spearman ρ,0.892,0.289,0.603,RefSeq complete-genome panel + k-mer probe; external temporal species-disjoint ρ≈0.29
+Dalla-Torre et al. 2025 (Nucleotide Transformer),[6],T01_NT,species OGT (same panel as Engqvist),species,Spearman ρ,0.915,0.546,0.369,Frozen NT-500m embeddings on T01 panel; same species block
+Hu et al. 2024 (AMR benchmark),Brief Bioinform,T06,isolate ceftazidime resistance,k-mer composition cluster (40 clusters),AUROC,0.579,0.518,0.061,Pa ceftazidime subset; proxy cluster block (full Hu phylogeny split not re-implemented)
+Grange et al. 2021 (SpillOver),[2],T02,organism-level spillover rank,organism entity (25 groups),Spearman ρ,0.764,-0.136,0.9,Integrity audit case: organism-constant labels + contamination rebuild; not biological discovery

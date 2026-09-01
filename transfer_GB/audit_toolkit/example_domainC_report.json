@@ -1,0 +1,22 @@
+{
+  "seed": 42,
+  "table": "third_domain_ogt_large/data/manifest.tsv",
+  "probe": {
+    "seed": 42,
+    "random": {
+      "rho": 0.8919354310527347,
+      "p": 2.2916912669636502e-269,
+      "n": 777,
+      "scheme": "shuffle_KFold_k5"
+    },
+    "blocked": {
+      "rho": 0.2886678517169691,
+      "p": 2.231052898591928e-16,
+      "n": 777,
+      "scheme": "GroupKFold_k5"
+    },
+    "delta_rho": 0.6032675793357656,
+    "n": 777,
+    "n_groups": 100
+  }
+}

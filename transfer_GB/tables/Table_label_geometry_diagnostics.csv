@@ -1,0 +1,6 @@
+task_id,layer,mechanism,n_genomes,label_assignment_unit,blocking_unit,n_label_groups,n_block_groups,median_block_size,pct_singleton_blocks,label_icc_or_purity,metric_type,within_block_label_homogeneity,random_cv_shared_block_frac
+T01,A,Label inheritance,777,species,species,100,100,6.5,0.0,1.0,ICC,1.0,1.0
+T07,A,Label inheritance,560,species,species,20,20,30.0,0.0,1.0,ICC,1.0,1.0
+T08,B,Lineage/taxonomic recurrence,440,species,Viral group,440,12,40.5,0.0,1.0,majority_purity,0.7485012770360506,1.0
+T06,B,Sequence-similarity block,302,isolate_id,k-mer cluster,302,40,7.0,5.0,1.0,majority_purity,0.7389789377289377,0.9933333333333334
+T03_REP,A,Label inheritance,1002,species,species,219,219,3.0,0.0,1.0,majority_purity,1.0,0.9620547263681593

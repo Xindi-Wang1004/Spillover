@@ -1,0 +1,18 @@
+{
+  "seed": 42,
+  "table": "../02_upgrade_evidence/GB_fillins/manifest/train_manifest_accession_disjoint_clean.csv",
+  "overlap": {
+    "n_a": 398,
+    "n_b": 632,
+    "accession_overlap": 0,
+    "accession_overlap_ids": [],
+    "claim_sequence_disjoint": true,
+    "n_groups_a": 66,
+    "n_groups_b": 25,
+    "group_overlap": 1,
+    "group_overlap_ids": [
+      "Rotavirus A"
+    ],
+    "claim_group_disjoint": false
+  }
+}

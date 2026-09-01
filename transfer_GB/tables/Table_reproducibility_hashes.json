@@ -1,0 +1,115 @@
+{
+  "generated_iso": "2026-09-01T15:00:17+0800",
+  "spillover_public_git_head": "38f08c2dc5a04645827a61054253517e56ecd920",
+  "files": [
+    {
+      "path": "docs/PREREGISTRY_MULTI_TASK_BENCHMARK.md",
+      "sha256": "4aad59e077c8f76468bed794393ffdae721fed442ca73c8d0a7e545dba7ceefb",
+      "bytes": 6450,
+      "mtime_iso": "2026-08-31T19:15:41+0800"
+    },
+    {
+      "path": "docs/PREREGISTRY_MULTI_TASK_BENCHMARK_GBv2.md",
+      "sha256": "0e0818a09157f8e23f544ab76298309d85398561ede358fafa15497a42fbac92",
+      "bytes": 5597,
+      "mtime_iso": "2026-09-01T09:19:51+0800"
+    },
+    {
+      "path": "docs/REPRODUCIBILITY_LOCK.md",
+      "sha256": "31f3657f66e3ae58891271d3e4ee77a06e67145f96ebf667cedd325089f9bd9f",
+      "bytes": 1791,
+      "mtime_iso": "2026-09-01T09:19:53+0800"
+    },
+    {
+      "path": "tables/Table_multi_task_matrix_summary.csv",
+      "sha256": "5e45891ef67579231b87096637d487ac96b740f353992d925f9819f6a22024f9",
+      "bytes": 3566,
+      "mtime_iso": "2026-09-01T00:06:27+0800"
+    },
+    {
+      "path": "tables/Table_simulation_label_geometry.csv",
+      "sha256": "18d03e43bfb38f3cb21facbce52b739eb5cc7eb0834b9c1ba416019eb7ec1ce8",
+      "bytes": 2258,
+      "mtime_iso": "2026-08-31T23:50:07+0800"
+    },
+    {
+      "path": "tables/Table_robustness_split_design.csv",
+      "sha256": "9a8e28338580a56d7a3a79591de67ebabad5e6e5d414719a7dd6e538a464880b",
+      "bytes": 2463,
+      "mtime_iso": "2026-09-01T13:41:59+0800"
+    },
+    {
+      "path": "tables/Table_published_benchmark_reanalysis.csv",
+      "sha256": "bcbb404fe36cd1863fffc7d473d6d93d5a4cdc9c9f71f7e164c301b309165d27",
+      "bytes": 1399,
+      "mtime_iso": "2026-09-01T13:31:34+0800"
+    },
+    {
+      "path": "tables/Table_multimodel_split_contrast.csv",
+      "sha256": "09c66b7f0fb4597929275d7bcf8d6fe6152455bc793c024e208dc90bfe89c82b",
+      "bytes": 627,
+      "mtime_iso": "2026-09-01T13:11:19+0800"
+    },
+    {
+      "path": "tables/Table_external_holdout_validation.csv",
+      "sha256": "570bdabaef323610753ea2f6efabe27df29612d8c0e820348adca6668fefc43e",
+      "bytes": 1679,
+      "mtime_iso": "2026-09-01T14:55:17+0800"
+    },
+    {
+      "path": "multi_task_audit/manifests/T03_mollentze.tsv",
+      "sha256": "8128fec87f7baf6f4a6e2e5fcc4c5ebb112758162f016e9ede45c2cb12d2ffbd",
+      "bytes": 274555,
+      "mtime_iso": "2026-08-31T18:31:29+0800"
+    },
+    {
+      "path": "multi_task_audit/manifests/T03_REP_mollentze_n2.tsv",
+      "sha256": "0afef8133df0dacdac58b2c410a7ec3bf52f8a23a79f06bdcad3abd19d535785",
+      "bytes": 166204,
+      "mtime_iso": "2026-09-01T00:04:48+0800"
+    },
+    {
+      "path": "multi_task_audit/T04/manifests/T04_ALT_pa_ceftaz.tsv",
+      "sha256": "261eadd8dda43e007d4ffd97fb7430c7e4d0e09dd4e411a1855d788eb198c2cf",
+      "bytes": 51347,
+      "mtime_iso": "2026-08-31T23:10:13+0800"
+    },
+    {
+      "path": "multi_task_audit/T04/manifests/T06_pa_ceftaz_cluster.tsv",
+      "sha256": "b78269f2d804423fbe1ffd5d1eae68150805c5065c9c3f7dde6af66b210dfaf7",
+      "bytes": 52472,
+      "mtime_iso": "2026-09-01T00:06:00+0800"
+    },
+    {
+      "path": "multi_task_audit/T05/manifests/T05_babayan.tsv",
+      "sha256": "83dd8e35866ce7f97e97fac522002f79080766dfcfefc8b7e30c1f4b45f30e4a",
+      "bytes": 19445,
+      "mtime_iso": "2026-08-31T19:11:07+0800"
+    },
+    {
+      "path": "multi_task_audit/T05/manifests/T08_babayan_viral_group.tsv",
+      "sha256": "3fd7d80adf41ed07cda05267d83067a538e6296b59a0f9e7644be8751166bfd5",
+      "bytes": 24686,
+      "mtime_iso": "2026-09-01T00:06:11+0800"
+    },
+    {
+      "path": "second_domain_bacteria/data/manifest.tsv",
+      "sha256": "ce0a6946f5412a2d00addb3f82454a75b0f30b83a651f5d55d9401fe8abf5bd0",
+      "bytes": 144514,
+      "mtime_iso": "2026-08-30T18:36:38+0800"
+    },
+    {
+      "path": "third_domain_ogt_large/data/manifest.tsv",
+      "sha256": "50af0b4e498c3f2c1fd0c66709a8327db115a10b3af49bf4c7e9a35df8e2393e",
+      "bytes": 153633,
+      "mtime_iso": "2026-08-31T10:17:02+0800"
+    },
+    {
+      "path": "GB_estimand_v1.md",
+      "sha256": "8fcf5cf43a74cafcaa3d42694636b73013dc0c0de2409a06739e2931a2d117c6",
+      "bytes": 26804,
+      "mtime_iso": "2026-09-01T15:00:06+0800"
+    }
+  ],
+  "regen": "python3 scripts/write_reproducibility_hashes.py"
+}

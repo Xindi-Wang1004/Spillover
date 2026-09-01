@@ -7,6 +7,20 @@ Wang, Luo, Li, Hon — *Science Bulletin*.
 Built from the internal analysis workspace used for the manuscript.  
 **Not** a dump of the whole project — only models, data, code, and tables used in the **final** manuscript.
 
+## GenomeML Report Card
+
+Executable audit package for estimand-matched genome ML evaluation (`genome-ml-reportcard`).
+
+```bash
+pip install genome-ml-reportcard
+# or from this repo:
+pip install -e transfer_GB/audit_toolkit
+genome-ml-reportcard --help
+```
+
+Source: `transfer_GB/audit_toolkit/`. Manuscript draft: `transfer_GB/GB_estimand_v1.md`.  
+Fine-tuned Spillover checkpoints (separate archive): Zenodo DOI [10.5281/zenodo.21809791](https://doi.org/10.5281/zenodo.21809791).
+
 ## Quick check
 
 ```bash
@@ -25,6 +39,7 @@ python3 verify_release.py
 | `code/` | Host-interaction enrichment & known-loci scripts |
 | `tables/` | Whitelisted `bib_tables` + analysis outputs (single copy, de-duplicated) |
 | `figures/` | Main-text Figures 1–4 (+ GA if present) |
+| `manuscript/` | Final Word manuscript (if copied at build time) |
 | `docs/` | Reproducibility notes for reviewers and *Science Bulletin* |
 
 
