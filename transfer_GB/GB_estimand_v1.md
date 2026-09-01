@@ -19,7 +19,7 @@ ORCID: Xindi Wang, 0009-0003-5042-9534; Junyu Luo, 0000-0003-2206-1931; Yixue Li
 
 Genome machine-learning datasets often contain multiple sequences from the same biological entities, including species, organisms, and viral lineages. Consequently, sequence-level random cross-validation may evaluate prediction for groups already represented in training rather than transfer to groups excluded from training. Here we present **GenomeML Report Card**, an executable framework that records label-assignment units and evaluation blocks, audits sequence overlap and group recurrence, and compares random and pre-specified blocked evaluation under a common reporting schema.
 
-Simulations show that random-to-blocked performance differences depend on within-group label homogeneity and replication, rather than representing a universal measure of leakage. Across microbial trait prediction, viral host prediction, and antimicrobial-resistance tasks, random and blocked splits produced task-dependent contrasts. In a temporal species-disjoint bacterial growth-temperature holdout, external performance aligned more closely with species-blocked than random cross-validation. GenomeML Report Card provides versioned manifests, machine-readable audit reports, and tiered reporting items to support explicit claims about held-out-group generalization.
+Simulations show that random-to-blocked performance differences depend on within-group label homogeneity and replication, and should not be interpreted as a universal leakage score. Across microbial trait prediction, viral host prediction, and antimicrobial-resistance tasks, random and blocked splits produced task-dependent contrasts. In a temporal species-disjoint bacterial growth-temperature holdout, external performance aligned more closely with species-blocked than random cross-validation. GenomeML Report Card provides an executable audit workflow, versioned manifests, machine-readable reports, and tiered reporting items for explicit claims about held-out-group generalization.
 
 **Keywords:** genome representation learning; estimand-matched evaluation; group-level estimand; label-assignment unit; split-design performance gap; data-integrity audit; benchmark resource
 
@@ -35,29 +35,31 @@ We distinguish two complementary notions that are often conflated in genome ML e
 
 **Layer A — label-assignment groups.** Labels are inherited or nearly constant within a biological unit \(g\in\mathcal{G}_{\mathrm{label}}\) (species-constant OGT [14], organism-constant SpillOver ranks [2], species-level virus phenotypes [3,4]). When \(\mathcal{G}_{\mathrm{label}}\) has multi-member replication and a high **random-CV shared-block fraction** (Table 1a), sequence-level random CV predominantly estimates performance **conditional on partial representation of test groups in training**—not automatic equivalence to a formal \(\theta_{\mathrm{seen}}\), but the operational regime the audit diagnoses.
 
-**Layer B — prediction-dependence / deployment blocks.** A pre-specified block unit \(B\) (k-mer cluster, viral lineage, temporal cohort) defines a held-out target even when labels vary within blocks. The logic is correlation, taxonomic recurrence, composition similarity, or population structure—not label copying. **AMR–composition-cluster (T06)** and **viral-host–lineage (T08)** [4] belong here.
+**Layer B — prediction-dependence / deployment blocks.** A pre-specified block unit \(B\) (k-mer cluster, viral lineage, temporal cohort) operationalizes a declared held-out evaluation target, provided that the scientific or deployment rationale for \(B\) is stated and auditable; labels may vary within blocks. The logic is correlation, taxonomic recurrence, composition similarity, or population structure—not label copying. **AMR–composition-cluster (T06)** and **viral-host–lineage (T08)** [4] belong here.
 
 Random splits are not intrinsically invalid; they answer a different question. **Group-blocked** splits (GroupKFold / LOGO on block \(B\)) target held-out performance **at that blocking level**—not automatically phylogenetic novelty, temporal deployment, or arbitrary out-of-distribution transfer. Block choice is a scientific/deployment decision that must be declared before interpreting scores.
 
-Let \(A\) be a learning algorithm, \(\Pi_{\mathrm{random}}\) a sample-level random partition, \(\Pi_B\) a block-level partition on unit \(B\), and \(M\) a dataset-level metric (AUROC, Spearman \(\rho\)). For cohort \(D\) and fold assignment \(\pi\):
+Let \(A\) be a learning algorithm, \(\Pi_{\mathrm{random}}\) a sample-level random partition, \(\Pi_B\) a block-level partition on unit \(B\), and \(M\) a dataset-level metric (AUROC, Spearman \(\rho\)). For the observed cohort \(D\) and fold assignment \(\pi\):
 
 \[
-\theta_{\mathrm{random}}(A,\Pi_{\mathrm{random}},M)
+\theta_{\mathrm{random}}(D; A,\Pi_{\mathrm{random}},M)
 =
-\mathbb{E}_{D,\pi}
+\mathbb{E}_{\pi \sim \Pi_{\mathrm{random}}}
 \left[
 M\big(\{(y_i,\hat y_i): i\in \mathrm{test}(\pi)\},\, A(D_{\mathrm{train}(\pi)})\big)
-\right].
+\right],
 \]
 
 \[
-\theta_{\mathrm{blocked},B}(A,\Pi_B,M)
+\theta_{\mathrm{blocked},B}(D; A,\Pi_B,M)
 =
-\mathbb{E}_{D,\pi_B}
+\mathbb{E}_{\pi_B \sim \Pi_B}
 \left[
 M\big(\{(y_i,\hat y_i): i\in \mathrm{test}(\pi_B)\},\, A(D_{\mathrm{train}(\pi_B)})\big)
 \right].
 \]
+
+These are **cohort-conditional** estimands: the expectations are taken over admissible split assignments conditional on the observed cohort \(D\). A population-level target would additionally require a declared sampling frame over cohorts and is not estimated here (Methods 4.2).
 
 Under Layer A, we use \(\theta_{\mathrm{seen}}\) as a conceptual shorthand for performance conditional on representation of the relevant label-assignment group in training; random sequence-level CV may approximate it when groups have multi-member replication and high train–test group recurrence, and the report card measures these conditions rather than assuming them. \(\theta_{\mathrm{unseen}}(B)\) (shorthand \(\theta_{\mathrm{blocked},B}\)) denotes the performance induced by the declared blocked partition—not a universal out-of-distribution estimand. The **split-design contrast** \(\Delta_B=\theta_{\mathrm{random}}-\theta_{\mathrm{blocked},B}\) is a **within-task diagnostic** on the task-primary metric; \(\Delta_B\) is not a universal biological effect size and must not be compared across tasks with different metrics (e.g. \(\Delta\rho\) vs \(\Delta\)AUROC).
 
@@ -65,11 +67,11 @@ Related concerns include phylogenetic non-independence [9,10] and pseudoreplicat
 
 ### 1.2 Relation to existing practice
 
-Group-aware evaluation is established (homology/identity-cluster splits [7,8], taxonomic hold-outs, phylogenetic CV [9,10]). **Our contribution is not “first to propose group split.”** We provide an **executable audit-and-reporting framework** that requires explicit label-assignment and blocking units, separates sequence contamination from group recurrence, compares random and blocked estimands side-by-side, and ships machine-readable manifests. Related genome language models such as DNABERT [5], Nucleotide Transformer [6], and Evo [1] motivate the need for estimand-matched evaluation when labels are assigned at biological-group levels.
+Group-aware evaluation is established for structured biological data (homology/identity-cluster splits [7,8], taxonomic hold-outs, phylogenetic CV [9,10], and block/spatial-temporal cross-validation for dependent observations [16]). Related concerns of transportability across sampling regimes [17] and leakage-driven irreproducibility in ML-based science [18] motivate explicit estimand declaration. **Our contribution is not “first to propose group split.”** We provide an **executable audit-and-reporting framework** that requires explicit label-assignment and blocking units, separates sequence contamination from group recurrence, compares random and blocked estimands side-by-side, and ships machine-readable manifests. Related genome language models such as DNABERT [5], Nucleotide Transformer [6], and Evo [1] motivate the need for estimand-matched evaluation when labels are assigned at biological-group levels.
 
 ### 1.3 Resource and evidence overview
 
-We release **GenomeML Report Card** (`genome-ml-reportcard` CLI; GitHub repository), a label-geometry simulator, version-locked benchmark manifests, and a reproducibility hash table. Primary evidence follows four chains: (i) **concept**—Layer A vs Layer B; (ii) **tool**—automated overlap, geometry, and split comparison; (iii) **simulation**—contrast depends on homogeneity and replication; (iv) **empirical audit**—multi-task panel (Fig. 3) plus temporal species-disjoint external holdout on **OGT–species (T01)** [14]. Supplementary materials include audit demonstrations on public datasets linked to published benchmarks, model-class robustness, and a SpillOver viral integrity audit case [2] (Supplementary Fig. S_integrity).
+We release **GenomeML Report Card** (`genome-ml-reportcard` CLI; GitHub repository), a label-geometry simulator, version-locked benchmark manifests, and a reproducibility hash table. The primary contribution is an executable evaluation-audit and reporting framework for genome ML studies that make claims about transfer beyond groups represented in training; the simulation, multi-task panel, and external holdout validate the framework rather than standing as independent findings. Primary evidence follows four chains: (i) **concept**—Layer A vs Layer B; (ii) **tool**—automated overlap, geometry, and split comparison; (iii) **simulation**—contrast depends on homogeneity and replication; (iv) **empirical audit**—multi-task panel (Fig. 3) plus temporal species-disjoint external holdout on **OGT–species (T01)** [14]. Supplementary materials include audit demonstrations on public datasets linked to published benchmarks, model-class robustness, and a SpillOver viral integrity audit case [2] (Supplementary Fig. S_integrity).
 
 ---
 
@@ -81,7 +83,7 @@ Given a manifest with genomes, labels, a label-assignment column, and a blocking
 
 Minimal manifest fields are `sequence_id` (or `accession`), `label`, `label_group`, and `evaluation_block`; `accession` and `sequence` are optional but recommended for contamination audits. `label_group` may equal `evaluation_block` (Layer A) but need not (Layer B); the framework requires both to be declared explicitly.
 
-Install with `pip install genome-ml-reportcard` (PyPI) or `pip install -e audit_toolkit/` from the paper repository. Minimal usage:
+Install with `pip install genome-ml-reportcard` (PyPI), or `pip install -e transfer_GB/audit_toolkit` from the paper repository. Minimal usage:
 
 ```bash
 genome-ml-reportcard \
@@ -104,37 +106,41 @@ With a locked Ridge out-of-fold probe (Fig. 2), the split-design gap under group
 
 Split-design contrasts require multi-member blocks, sufficient within-block label homogeneity, and cross-fold block recurrence under random CV (Table 1a).
 
-| Task | Layer | Label unit | Block unit | Within-block homogeneity | Random CV shared-block |
-|---|---|---|---|---:|---:|
-| OGT–species (T01) | A | species | species | ICC = 1.0 | 1.00 |
-| Viral-host–lineage (T08) | B | species | Viral group | purity = 0.75 | 1.00 |
-| AMR–composition-cluster (T06) | B | isolate | k-mer cluster | purity = 0.74 | 0.99 |
-| Virus phenotype–species (T03_REP) | A | species | species | purity = 1.0 | 0.96 |
+| Task | Layer | Label unit | Block unit | Within-block homogeneity | Minority prevalence | Random CV shared-block |
+|---|---|---|---|---:|---:|---:|
+| OGT–species (T01) | A | species | species | ICC = 1.0 | — (continuous) | 1.00 |
+| Viral-host–lineage (T08) | B | species | Viral group | purity = 0.75 | 0.34 | 1.00 |
+| AMR–composition-cluster (T06) | B | isolate | k-mer cluster | purity = 0.74 | 0.36 | 0.99 |
+| Virus phenotype–species (T03_REP) | A | species | species | purity = 1.0 | 0.25 | 0.96 |
 
-**OGT–species (T01)** [14] and **virus phenotype–species (T03_REP)** [3] are Layer A (label inheritance; ICC/purity = 1.0). **Viral-host–lineage (T08)** [4] is Layer B: reservoir labels are species-constant, but Viral-group blocks are label-heterogeneous (majority purity ≈ 0.75; 12 groups—exploratory scale, not broad biological replication). **AMR–composition-cluster (T06)** is Layer B: isolate-level labels with clusters defined from sequence-composition features (Supplementary Table S_T06)—an **illustrative operational block** that represents a declared stress-test target rather than a validated phylogenetic or clinical deployment partition.
+**OGT–species (T01)** [14] and **virus phenotype–species (T03_REP)** [3] are Layer A (label inheritance; ICC/purity = 1.0). **Viral-host–lineage (T08)** [4] is Layer B: reservoir labels are species-constant, but Viral-group blocks are label-heterogeneous (majority purity ≈ 0.75; 12 groups—exploratory scale, not broad biological replication). Leave-one-viral-group-out pooled AUROC ≈ 0.55 with heterogeneous per-group performance; per-group composition and LOGO results are in Supplementary Table S_T08_composition and Fig. S_T08_logo. The repeated group-fold and LOGO summaries differ because they aggregate predictions over different fold compositions; LOGO is reported as a block-level diagnostic rather than an interchangeable estimate of the repeated GroupKFold summary. **AMR–composition-cluster (T06)** is Layer B: isolate-level labels with clusters defined once from **label-free** sequence-composition features on the full reference panel (Supplementary Table S_T06)—an **illustrative operational block** that represents a declared stress-test target rather than a validated phylogenetic or clinical deployment partition. In deployment terms, clusters function as a precomputed reference composition taxonomy: new isolates would be assigned to the nearest existing cluster under the same unsupervised rule, without using phenotype labels. The small positive contrast was stable across cluster resolutions (ΔAUROC ≈ 0.06–0.11 for k = 20–50; Supplementary Table S_T06_sensitivity).
 
 **Primary evidence** uses repeated random vs group-blocked CV with group-aware locked Ridge \(\alpha\) (Table 1; Fig. 3). Historical single-seed estimates are Supplementary only.
 
 | Task | Layer | Block | Metric | Random mean | Blocked mean | Mean \(\Delta\) | SAI‡ | Repeats |
 |---|---|---|---|---:|---:|---:|---|---:|
-| OGT–species (T01) | A | species | \(\rho\) | 0.869 | 0.382 | 0.486 | [0.41, 0.57] | 15 |
+| OGT–species (T01) | A | species | \(\rho\) (species-macro; primary) | 0.911 | 0.462 | 0.449 | [0.36, 0.53] | 15 |
+| OGT–species (T01) | A | species | \(\rho\) (genome-pooled; secondary) | 0.869 | 0.382 | 0.486 | [0.41, 0.57] | 15 |
 | Viral-host–lineage (T08) | B | Viral group | AUROC | 0.768 | 0.528 | 0.240 | [0.16, 0.33] | 40 |
 | AMR–composition-cluster (T06) | B | k-mer cluster | AUROC | 0.580 | 0.510 | 0.071 | [0.02, 0.13] | 30 |
 | Virus phenotype–species (T03_REP) | A | species | AUROC | 0.700 | 0.621 | 0.079 | [0.05, 0.11] | 20 |
 
-‡Split-assignment interval: 2.5–97.5% across repeated fold assignments; quantifies partition sensitivity on the observed cohort, not population-level inferential uncertainty (Methods 4.2).
+‡Split-assignment interval (SAI): 2.5–97.5% across repeated fold assignments; quantifies partition sensitivity on the observed cohort. **SAI is not a confidence interval** and must not be read as population-level inferential uncertainty (Methods 4.2).
 
-**Interpretation.** Large contrasts appear under Layer A species-constant traits with cross-fold species recurrence (T01). In tasks with lower within-block label homogeneity, weaker predictive signal, or limited effective group replication, the random-to-blocked contrast was correspondingly small (T03_REP, T06). **Viral-host–lineage (T08)** supports that lineage-blocked and random splits target different estimands within this small-group setting; it does not support broad viral host-transfer claims. Blocking units are not interchangeable—species, viral-group, and composition-cluster blocks estimate different held-out targets (Supplementary Table S_blocking).
+†For Layer A species-constant outcomes, the species-macro estimate (equal weight per species) is the primary summary and genome-pooled is secondary. A frozen Nucleotide Transformer embedding companion for OGT–species (T01; single-seed historical, GPU-computed) preserved the ordering: random ρ 0.92 vs species-blocked 0.55 (Δρ 0.37; Supplementary Table S_NT). The magnitude of the contrast varied by representation, but the ordering of random and declared-block evaluation was preserved in the examined T01 setting for both k-mer and pretrained nucleotide-representation probes.
+
+**Interpretation.** Large contrasts appear under Layer A species-constant traits with cross-fold species recurrence (T01). In tasks with lower within-block label homogeneity, weaker predictive signal, or limited effective group replication, the random-to-blocked contrast was correspondingly small (T03_REP, T06). Fully nested Ridge-\(\alpha\) retuning (Supplementary Table S_nested) preserved contrast direction versus the locked-\(\alpha\) primary protocol. **Viral-host–lineage (T08)** supports that lineage-blocked and random splits target different estimands within this small-group setting; it does not support broad viral host-transfer claims. Blocking units are not interchangeable—species, viral-group, and composition-cluster blocks estimate different held-out targets (Supplementary Table S_blocking). The same qualitative pattern held across model classes on shared k-mer features (Supplementary Table S_multimodel): T01 Δρ 0.42–0.54 (Ridge, gradient-boosted trees), T08 ΔAUROC 0.25–0.36 (Ridge, logistic, gradient-boosted trees), T03_REP ΔAUROC 0.08–0.10. For Layer A species-constant outcomes, species-macro estimates (equal weight per species) moved in the same direction as genome-pooled values (e.g., T01 Δρ 0.45 [0.36, 0.53] vs 0.49 [0.41, 0.57]; Supplementary Table S_robustness).
 
 Fig. 3 displays paired random vs blocked scores **per task in separate panels** with task-native metrics; \(\Delta_B\) is a within-task diagnostic and must not be read as a cross-task leakage league table.
 
 ### 2.4 External deployment validation
 
-To test whether a declared block approximates deployment-relevant generalization, we evaluated an external holdout on **OGT–species (T01)** [14] with the same k-mer Ridge probe (Table 2; Supplementary Fig. S_external). All species whose first RefSeq `seq_rel_date` is ≥2015 were withheld from training (524 test genomes, 63 species). External Spearman ρ≈**0.29** (species-level bootstrap 95% CI 0.07–0.49; genome-level 0.23–0.36), versus random CV ρ≈0.86 and species-blocked CV ρ≈0.34—in this temporal species-disjoint panel, external performance was substantially closer to species-blocked than to random cross-validation. `seq_rel_date` is a database-entry proxy for entry of taxa into the reference panel, and temporal shifts in assembly quality or sampling cannot be fully excluded. Geographic holdouts on Domain B OGT (T07; supplementary) show that country blocking without species exclusion does not imply novel-species transfer under species-constant labels.
+To test whether a declared block approximates deployment-relevant generalization, we evaluated an external holdout on **OGT–species (T01)** [14] with the same k-mer Ridge probe (Table 2; Supplementary Fig. S_external). All species whose first RefSeq `seq_rel_date` is ≥2015 were withheld from training (524 test genomes, 63 species). External Spearman ρ≈**0.29** (species-level bootstrap 95% CI 0.07–0.49; genome-level 0.23–0.36), versus random CV ρ≈0.86 and species-blocked CV ρ≈0.34—in this temporal species-disjoint panel, external performance was substantially closer to species-blocked than to random cross-validation. `seq_rel_date` is a database-entry proxy for entry of taxa into the reference panel, and temporal shifts in assembly quality or sampling cannot be fully excluded. Species-macro external ρ≈**0.35** (equal weight per test species) was consistent with the genome-pooled estimate; species-macro random (≈0.90) and blocked (≈0.45) CV values are in Supplementary Table S_external. Geographic holdouts on Domain B OGT (T07; supplementary) show that country blocking without species exclusion does not imply novel-species transfer under species-constant labels.
 
-| Panel | Holdout | n_test | Random CV | Species-blocked CV | External |
-|---|---|---:|---:|---:|---:|
-| OGT–species (T01) | species first sequenced ≥2015 | 524 | 0.86 | 0.34 | **0.29** |
+| Analysis unit | n_test | Random CV | Species-blocked CV | External |
+|---|---:|---:|---:|---:|
+| **Species-macro (primary)** | 524 | 0.91 | 0.46 | **0.35** |
+| Genome-pooled (secondary) | 524 | 0.87 | 0.38 | **0.29** |
 
 ### 2.5 Reporting schema and software availability
 
@@ -148,13 +154,13 @@ Genome ML training–test partitions must match the claimed generalization targe
 
 The split-design contrast \(\Delta_B\) is a **within-task diagnostic**, not a universal leakage score or cross-task league table. Repeated split-assignment sensitivity, external holdout on **OGT–species (T01)**, and multi-model checks (Supplementary) show that large T01 contrasts are not single-split artifacts; in tasks with lower homogeneity, weaker signal, or limited replication, contrasts were correspondingly small. **The tool does not choose the “correct” block**—it requires users to declare the deployment estimand and audit consistency with the split design. The report card is model-agnostic; the present empirical panel uses standardized k-mer Ridge probes to isolate split-design effects under a common modeling contract.
 
-Limitations: **Viral-host–lineage (T08)** has only 12 viral groups with ≈75% within-group label purity—illustrative, not scalable biological replication. **AMR–composition-cluster (T06)** uses composition clusters as operational blocks. Frozen k-mer probes are not end-to-end fine-tuning validation. External temporal validation currently covers T01 only. PyPI/Zenodo release pins should be refreshed on the submission tag.
+Limitations: **Viral-host–lineage (T08)** has only 12 viral groups with ≈75% within-group label purity—illustrative, not scalable biological replication. **AMR–composition-cluster (T06)** uses composition clusters as operational blocks. Frozen k-mer probes are not end-to-end fine-tuning validation. External temporal validation currently covers T01 only.
 
 ---
 
 ## 4 Methods
 
-Version-locked analysis plan: `docs/PREREGISTRY_MULTI_TASK_BENCHMARK_GBv2.md` (locked 2026-08-31 CST, before T03_REP/T06/T08 execution). Post-matrix robustness and multi-model analyses are logged as amendments in the same file.
+Versioned analysis specification: `docs/PREREGISTRY_MULTI_TASK_BENCHMARK_GBv2.md` (locked 2026-08-31 CST before T03_REP/T06/T08 execution; post-matrix robustness and multi-model analyses are logged as dated amendments in the same file and the reproducibility hash table).
 
 ### 4.1 Estimands and primary evaluation
 
@@ -162,7 +168,7 @@ Version-locked analysis plan: `docs/PREREGISTRY_MULTI_TASK_BENCHMARK_GBv2.md` (l
 
 ### 4.2 Split-assignment sensitivity
 
-Ridge \(\alpha\) locked once via group-aware GroupKFold MSE; reused across 15–40 repeated random vs group-fold assignments per task. **Split-assignment interval (SAI)** = 2.5–97.5% percentile across repeats on the observed cohort. LOGO diagnostics for T08: Supplementary Fig. S_T08_logo.
+Ridge \(\alpha\) locked once via group-aware GroupKFold MSE; reused across 15–40 repeated random vs group-fold assignments per task (primary protocol). As a sensitivity check, we also retuned \(\alpha\) on each outer training fold (fully nested group-aware Ridge) for T01, T08 and T03_REP (8 repeats; Supplementary Table S_nested): split-design contrasts retained the **same sign** as the locked-\(\alpha\) protocol (T01 nested \(\Delta\rho\)=0.57 vs locked 0.49; T08 nested \(\Delta\)AUROC=0.29 vs locked 0.24; T03_REP 0.082 vs 0.079). **Split-assignment interval (SAI)** = 2.5–97.5% percentile across repeats on the observed cohort. LOGO diagnostics for T08: Supplementary Fig. S_T08_logo. These quantities are **cohort-conditional**: they describe performance over admissible split assignments of the observed cohort, not sampling uncertainty over a broader biological population. Statements about population-level or deployment generalization require an explicit sampling frame and an external cohort (§2.4); SAI values must not be read as inferential confidence intervals for those targets. Feature scaling is fit on each training fold only; the k-mer vocabulary is fixed a priori (4-mers).
 
 ### 4.3 Label-geometry diagnostics
 
@@ -182,17 +188,17 @@ Label-geometry simulator; factors ICC, genomes/group, within-group feature corre
 
 ### 4.7 Multi-task audit panel
 
-Inclusion: public data; documented label-assignment level; primary rows require non-singleton blocks. **Primary panel:** OGT–species (T01) [14]; viral-host–lineage (T08) [4]; AMR–composition-cluster (T06); virus phenotype–species (T03_REP) [3]. **Supplementary:** Domain B OGT (T07); SpillOver integrity audit (T02) [2]; construction controls T04_ALT/T05. Babayan labels: binary mammal vs other; Orphan excluded. Near-neighbor screens use a 7-mer MinHash Jaccard candidate screen [7,8] (k = 7, stride = 31, n_hash = 128, seed = 42; train–evaluation pairs with J ≥ 0.95 flagged, also reported at J ≥ 0.99). The screen is an inexpensive candidate-detection procedure rather than a definitive homology or contamination call; flagged pairs are reported for optional sequence-alignment or ANI confirmation.
+Inclusion: public data; documented label-assignment level; primary rows require non-singleton blocks. **Primary panel:** OGT–species (T01) [14]; viral-host–lineage (T08) [4]; AMR–composition-cluster (T06); virus phenotype–species (T03_REP) [3]. **Supplementary:** Domain B OGT (T07); SpillOver integrity audit (T02) [2]; construction controls T04_ALT/T05. Babayan labels: binary mammal vs other; Orphan excluded. Near-neighbor screens use a 7-mer MinHash Jaccard candidate screen [7,8] (k = 7, stride = 31, n_hash = 128, seed = 42; train–evaluation pairs with J ≥ 0.95 flagged, also reported at J ≥ 0.99). The screen is an inexpensive candidate-detection procedure rather than a definitive homology or contamination call; flagged pairs are reported for optional sequence-alignment or ANI confirmation. In the final clean viral manifest no candidates exceeded the prespecified screening threshold (J ≥ 0.95 or 0.99); therefore no candidate-specific alignment or ANI follow-up was triggered. The screen is a candidate-detection procedure and does not guarantee the absence of homology below the threshold.
 
 ### 4.8 Reproducibility
 
-SHA-256 hashes of manifests and analysis plans (`tables/Table_reproducibility_hashes.json`). Code: https://github.com/Xindi-Wang1004/Spillover (`transfer_GB/` snapshot). Zenodo checkpoints DOI 10.5281/zenodo.21809791. Refresh hashes on submission tag.
+SHA-256 hashes of manifests and analysis plans (`tables/Table_reproducibility_hashes.json`). Code: https://github.com/Xindi-Wang1004/Spillover (`transfer_GB/` snapshot; tag `reportcard-v0.1.1`). Software archive DOI [10.5281/zenodo.22226465](https://doi.org/10.5281/zenodo.22226465). Zenodo checkpoints DOI 10.5281/zenodo.21809791. Refresh hashes on submission tag.
 
 ---
 
 ## 5 Data and resource availability
 
-Code and GenomeML Report Card: https://github.com/Xindi-Wang1004/Spillover (`transfer_GB/` snapshot). Install via `pip install genome-ml-reportcard` (or `pip install -e transfer_GB/audit_toolkit` from the repository). Version-locked manifests, simulation outputs, and hash table accompany the release. Spillover checkpoints: Zenodo DOI 10.5281/zenodo.21809791; software/code archive DOI assigned at the `reportcard-v0.1.1` GitHub/Zenodo release.
+Code and GenomeML Report Card: https://github.com/Xindi-Wang1004/Spillover (`transfer_GB/` snapshot; tag `reportcard-v0.1.1`). Install via `pip install genome-ml-reportcard` (PyPI: https://pypi.org/project/genome-ml-reportcard/), or `pip install -e transfer_GB/audit_toolkit` from the repository. Version-locked manifests, simulation outputs, and hash table accompany the release. Software archive: Zenodo DOI [10.5281/zenodo.22226465](https://doi.org/10.5281/zenodo.22226465). Spillover checkpoints (separate): Zenodo DOI [10.5281/zenodo.21809791](https://doi.org/10.5281/zenodo.21809791).
 
 ---
 
@@ -202,13 +208,13 @@ Code and GenomeML Report Card: https://github.com/Xindi-Wang1004/Spillover (`tra
 
 **Figure 2. Label-geometry simulation.** Split-design contrast vs replication and ICC.
 
-**Figure 3. Multi-task audit matrix (repeated CV).** Paired random vs group-blocked scores per task in separate panels with task-native metrics (Spearman ρ or AUROC). Within-task diagnostic only; metrics are not comparable across panels.
+**Figure 3. Multi-task audit matrix (repeated CV).** Paired random vs group-blocked scores per task in separate panels with task-native metrics (Spearman ρ or AUROC). Within-task diagnostic only; metrics are not comparable across panels. Error bars / intervals are split-assignment intervals (SAI), **not confidence intervals**.
 
 **Figure 4. Tiered reporting items for held-out-block claims.** Minimum, strongly recommended, and conditional/recommended fields.
 
 **Supplementary Figure S_integrity.** SpillOver organism-constant labels [2]; contamination rebuild illustrates the risk of interpreting seen-group performance as evidence of held-out-group transfer [13].
 
-**Supplementary Figure S_robustness.** Split-design contrasts with split-assignment intervals.
+**Supplementary Figure S_robustness.** Split-design contrasts with split-assignment intervals (SAI; not confidence intervals).
 
 **Supplementary Figure S_T08_logo.** Viral-host–lineage (T08) leave-one-group-out AUROC by viral group.
 
@@ -216,11 +222,13 @@ Code and GenomeML Report Card: https://github.com/Xindi-Wang1004/Spillover (`tra
 
 ## Table captions
 
-**Table 1.** Primary multi-task audit matrix (repeated CV; task-primary metrics).
+**Table 1.** Primary multi-task audit matrix (repeated CV; task-primary metrics; species-macro primary for Layer A species-constant outcomes).
 
 **Table 1a.** Label geometry diagnostics (Layer A/B, homogeneity, random-CV block recurrence).
 
-**Table 2.** External deployment holdout (OGT–species temporal panel).
+**Table 2.** External deployment holdout (OGT–species temporal species-disjoint panel; 524 test genomes / 63 species; species-macro primary).
+
+**Supplementary Table S_nested.** Nested vs locked Ridge-\(\alpha\) split-design contrast sensitivity (T01, T08, T03_REP).
 
 **Supplementary Table S_audit.** Audit demonstrations on public datasets linked to published genome-ML benchmarks (common k-mer Ridge probe; single-seed estimates for cross-study comparability only—not reproduction of original study pipelines or reported performance).
 
@@ -261,6 +269,12 @@ Code and GenomeML Report Card: https://github.com/Xindi-Wang1004/Spillover (`tra
 [14] Engqvist MKM. Correlating enzyme annotations with a large set of microbial growth temperatures reveals metabolic adaptations to growth at diverse temperatures. BMC Bioinformatics. 2018;19(Suppl 1):32. doi:10.1186/s12859-018-2020-1
 
 [15] Hurlbert SH. Pseudoreplication and the design of ecological field experiments. Ecol Monogr. 1984 Jun;54(2):187–211. doi:10.2307/1942661
+
+[16] Roberts DR, Bahn V, Ciuti S, Boyce MS, Elith J, Guillera-Arroita G, et al. Cross-validation strategies for data with temporal, spatial, hierarchical, or phylogenetic structure. Ecography. 2017;40(8):913–29. doi:10.1111/ecog.02881
+
+[17] Bareinboim E, Pearl J. Causal inference and the data-fusion problem. Proc Natl Acad Sci USA. 2016;113(27):7345–52. doi:10.1073/pnas.1510507113
+
+[18] Kapoor S, Narayanan A. Leakage and the reproducibility crisis in machine-learning-based science. Patterns. 2023;4(9):100804. doi:10.1016/j.patter.2023.100804
 
 ---
 

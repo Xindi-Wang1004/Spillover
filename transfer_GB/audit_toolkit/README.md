@@ -6,24 +6,18 @@ Records **label-assignment units** and **blocking units**, audits sequence/group
 
 ## Install
 
-PyPI (`genome-ml-reportcard`) is **not yet published** (verified 2026-09-01). Install from this repository or the tagged release wheel:
+```bash
+pip install genome-ml-reportcard
+```
+
+Development / paper bundle:
 
 ```bash
 git clone https://github.com/Xindi-Wang1004/Spillover.git
 pip install -e Spillover/transfer_GB/audit_toolkit
 ```
 
-```bash
-# Release wheel (v0.1.1)
-pip install https://github.com/Xindi-Wang1004/Spillover/releases/download/reportcard-v0.1.1/genome_ml_reportcard-0.1.1-py3-none-any.whl
-```
-
-After PyPI publication:
-
-```bash
-pip install genome-ml-reportcard
-```
-
+PyPI: https://pypi.org/project/genome-ml-reportcard/  
 Software archive: [10.5281/zenodo.22226465](https://doi.org/10.5281/zenodo.22226465).
 
 ## Quickstart

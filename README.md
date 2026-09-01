@@ -12,25 +12,20 @@ Executable audit package for estimand-matched genome ML evaluation: records labe
 
 ### Install
 
-PyPI package name: `genome-ml-reportcard` (upload pending as of 2026-09-01; verified not yet published). Use GitHub or the release wheel until PyPI is live:
-
 ```bash
-# Recommended until PyPI is published
-git clone https://github.com/Xindi-Wang1004/Spillover.git
-cd Spillover
-pip install -e transfer_GB/audit_toolkit
-
-# Or install the release wheel from GitHub Releases / Zenodo
-# pip install https://github.com/Xindi-Wang1004/Spillover/releases/download/reportcard-v0.1.1/genome_ml_reportcard-0.1.1-py3-none-any.whl
-
+pip install genome-ml-reportcard
 genome-ml-reportcard --help
 ```
 
-After PyPI publication:
+Development / paper bundle from this repo:
 
 ```bash
-pip install genome-ml-reportcard
+git clone https://github.com/Xindi-Wang1004/Spillover.git
+cd Spillover
+pip install -e transfer_GB/audit_toolkit
 ```
+
+PyPI: https://pypi.org/project/genome-ml-reportcard/
 
 Source: `transfer_GB/audit_toolkit/`. Manuscript draft: `transfer_GB/GB_estimand_v1.md`.  
 Software archive: Zenodo DOI [10.5281/zenodo.22226465](https://doi.org/10.5281/zenodo.22226465).  
