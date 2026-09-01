@@ -1,4 +1,4 @@
-# Run registry (Science Bulletin)
+# Run registry (Spillover companion analyses)
 
 Index of frozen analysis runs supporting the main and supplementary results.
 Full notes: `REPRODUCIBILITY.md`. Seed **42** unless a local `run_meta_*.json` says otherwise.

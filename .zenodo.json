@@ -1,6 +1,6 @@
 {
   "title": "GenomeML Report Card and Spillover public release",
-  "description": "Public code and GenomeML Report Card (genome-ml-reportcard) for estimand-matched evaluation of genome machine learning, plus the Spillover Science Bulletin analysis package. Checkpoints remain at DOI 10.5281/zenodo.21809791.",
+  "description": "Public code and GenomeML Report Card (genome-ml-reportcard) for estimand-matched evaluation of genome machine learning (Genome Biology submission), plus companion Spillover viral analysis artifacts. Checkpoints remain at DOI 10.5281/zenodo.21809791.",
   "creators": [
     {"name": "Wang, Xindi", "orcid": "0009-0003-5042-9534"},
     {"name": "Luo, Junyu", "orcid": "0000-0003-2206-1931"},

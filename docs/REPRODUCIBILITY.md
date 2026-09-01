@@ -1,4 +1,6 @@
-# Reproducibility — Science Bulletin
+# Reproducibility — Spillover companion package
+
+Notes below cover the Spillover viral analysis tree shipped alongside the Genome Biology GenomeML Report Card release.
 
 ## Build provenance
 
@@ -39,9 +41,9 @@ export SPILLOVER_ROOT="$(pwd)"
 and edit path constants in the relevant `run_*.py` / `run_all.py` to point at this tree
 (or the companion Zenodo checkpoint deposit).
 
-## Science Bulletin data-availability statement (suggested)
+## Data-availability statement (suggested)
 
-> Analysis code, frozen embeddings, supplementary tables, and analysis outputs supporting the main and supplementary results are available at https://github.com/Xindi-Wang1004/Spillover. Fine-tuned model checkpoints are archived at Zenodo (DOI: 10.5281/zenodo.21809791). Third-party data (GISAID EpiFlu metadata) were used under their respective terms and are not redistributed.
+> GenomeML Report Card source and release assets are available at https://github.com/Xindi-Wang1004/Spillover (software DOI: 10.5281/zenodo.22226465). Companion Spillover analysis code, frozen embeddings, supplementary tables, and analysis outputs are in the same repository. Fine-tuned model checkpoints are archived at Zenodo (DOI: 10.5281/zenodo.21809791). Third-party data (GISAID EpiFlu metadata) were used under their respective terms and are not redistributed.
 
 ## Contact
 
