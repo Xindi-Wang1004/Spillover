@@ -1,1 +1,32 @@
-{"title": "GenomeML Report Card and Spillover public release", "description": "Public code and GenomeML Report Card (genome-ml-reportcard) for estimand-matched evaluation of genome machine learning (manuscript submission), plus companion Spillover viral analysis artifacts. Checkpoints remain at DOI 10.5281/zenodo.21809791.", "creators": [{"name": "Wang, Xindi", "orcid": "0009-0003-5042-9534"}, {"name": "Luo, Junyu", "orcid": "0000-0003-2206-1931"}, {"name": "Li, Yixue", "orcid": "0000-0002-1198-7176"}, {"name": "Hon, Chitin", "orcid": "0000-0002-5658-3503"}], "keywords": ["genome machine learning", "evaluation", "group-blocked CV", "estimand", "report card"], "license": "mit", "upload_type": "software", "access_right": "open"}
+{
+  "title": "GenomeML Report Card companion and Spillover public release",
+  "description": "Public companion artifacts for GenomeML Report Card (genome-ml-reportcard), plus Spillover viral analysis materials. Software concept DOI 10.5281/zenodo.22275801; checkpoints DOI 10.5281/zenodo.21809791.",
+  "creators": [
+    {
+      "name": "Wang, Xindi",
+      "orcid": "0009-0003-5042-9534"
+    },
+    {
+      "name": "Luo, Junyu",
+      "orcid": "0000-0003-2206-1931"
+    },
+    {
+      "name": "Li, Yixue",
+      "orcid": "0000-0002-1198-7176"
+    },
+    {
+      "name": "Hon, Chitin",
+      "orcid": "0000-0002-5658-3503"
+    }
+  ],
+  "keywords": [
+    "genome machine learning",
+    "evaluation",
+    "group-blocked CV",
+    "estimand",
+    "report card"
+  ],
+  "license": "mit",
+  "upload_type": "software",
+  "access_right": "open"
+}

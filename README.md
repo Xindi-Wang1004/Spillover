@@ -1,38 +1,23 @@
-# Spillover —  public release
+# Spillover — public release
 
-This repository supports the **** Method/Resource manuscript:
-
-**GenomeML Report Card: an executable framework for estimand-matched evaluation of genome machine learning**
-
-It also archives companion Spillover viral-genome analysis artifacts (models, embeddings, and post-hoc scripts) used in the Report Card supplementary integrity case and related analyses.
+This repository archives companion analysis artifacts for **GenomeML Report Card** (an executable audit framework for biological generalization claims in genome machine learning), including viral-genome integrity-case materials used alongside the software package.
 
 ## GenomeML Report Card (`genome-ml-reportcard`)
 
-Executable audit package for estimand-matched genome ML evaluation: records label-assignment units and evaluation blocks, audits sequence overlap / group recurrence / label geometry, and compares random vs pre-specified blocked evaluation under a common reporting schema.
-
-### Install
+Canonical software home: https://github.com/Xindi-Wang1004/GenomeML-ReportCard
 
 ```bash
 pip install genome-ml-reportcard
 genome-ml-reportcard --help
 ```
 
-Development / paper bundle from this repo:
+PyPI: https://pypi.org/project/genome-ml-reportcard/  
+Software archive (Zenodo concept DOI): https://doi.org/10.5281/zenodo.22275801  
+Fine-tuned Spillover checkpoints (separate): https://doi.org/10.5281/zenodo.21809791
 
-```bash
-git clone https://github.com/Xindi-Wang1004/Spillover.git
-cd Spillover
-pip install -e reportcard_companion/audit_toolkit
-```
+A lightweight package mirror and frozen tables also live under `reportcard_companion/` in this repository.
 
-PyPI: https://pypi.org/project/genome-ml-reportcard/
-
-Source: `reportcard_companion/audit_toolkit/`. Manuscript draft: `reportcard_companion/GB_estimand_v1.md`.  
-Software archive: Zenodo DOI [10.5281/zenodo.22226465](https://doi.org/10.5281/zenodo.22226465).  
-Fine-tuned Spillover checkpoints (separate): Zenodo DOI [10.5281/zenodo.21809791](https://doi.org/10.5281/zenodo.21809791).  
-Release tag: [`reportcard-v0.1.1`](https://github.com/Xindi-Wang1004/Spillover/releases/tag/reportcard-v0.1.1).
-
-## Quick check (Spillover companion tree)
+## Quick check
 
 ```bash
 export SPILLOVER_ROOT="$(pwd)"
@@ -43,24 +28,20 @@ python3 verify_release.py
 
 | Directory | Contents |
 |-----------|----------|
-| `reportcard_companion/` | GenomeML Report Card package, manifests, and GB manuscript materials |
-| `data/` | Overlap cohort (n=632), SpillOver rankings, E2E predictions, IG inputs |
-| `embeddings/` | Frozen pooled genome embeddings (regression / host / multitask) |
+| `reportcard_companion/` | Report Card companion package mirror, manifests, frozen tables |
+| `data/` | Overlap cohort, SpillOver rankings, E2E predictions, IG inputs |
+| `embeddings/` | Frozen pooled genome embeddings |
 | `models/` | Fine-tuned checkpoints + `checkpoint_manifest.json` |
-| `code/analysis/` | Final post-hoc analysis bundles (P0/P1, S35–S37, S43, Picorna, CoV dense) |
-| `code/` | Host-interaction enrichment & known-loci scripts |
-| `tables/` | Whitelisted `bib_tables` + analysis outputs (single copy, de-duplicated) |
-| `figures/` | Main-text figures (+ GA if present) |
-| `manuscript/` | Final Word manuscript (if copied at build time) |
-| `docs/` | Reproducibility notes for reviewers |
+| `code/` | Analysis scripts |
+| `tables/` | Whitelisted tables and analysis outputs |
+| `figures/` | Figures |
+| `docs/` | Reproducibility notes |
 
 ## External data
 
 SpillOver composite scores: Grange et al., 2021 — https://spillover.ecohealthalliance.org/  
 Viral accessions: NCBI Virus / GenBank (listed in tables).
 
-See `docs/DATA_SOURCES.md` and `docs/REPRODUCIBILITY.md`.
-
 ## Citation
 
-Please cite the  manuscript (GenomeML Report Card) and, where SpillOver scores are used, the SpillOver data resource.
+Please cite the GenomeML Report Card manuscript and, where SpillOver scores are used, the SpillOver data resource.
