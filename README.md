@@ -1,6 +1,6 @@
-# Spillover — Genome Biology public release
+# Spillover —  public release
 
-This repository supports the **Genome Biology** Method/Resource manuscript:
+This repository supports the **** Method/Resource manuscript:
 
 **GenomeML Report Card: an executable framework for estimand-matched evaluation of genome machine learning**
 
@@ -22,12 +22,12 @@ Development / paper bundle from this repo:
 ```bash
 git clone https://github.com/Xindi-Wang1004/Spillover.git
 cd Spillover
-pip install -e transfer_GB/audit_toolkit
+pip install -e reportcard_companion/audit_toolkit
 ```
 
 PyPI: https://pypi.org/project/genome-ml-reportcard/
 
-Source: `transfer_GB/audit_toolkit/`. Manuscript draft: `transfer_GB/GB_estimand_v1.md`.  
+Source: `reportcard_companion/audit_toolkit/`. Manuscript draft: `reportcard_companion/GB_estimand_v1.md`.  
 Software archive: Zenodo DOI [10.5281/zenodo.22226465](https://doi.org/10.5281/zenodo.22226465).  
 Fine-tuned Spillover checkpoints (separate): Zenodo DOI [10.5281/zenodo.21809791](https://doi.org/10.5281/zenodo.21809791).  
 Release tag: [`reportcard-v0.1.1`](https://github.com/Xindi-Wang1004/Spillover/releases/tag/reportcard-v0.1.1).
@@ -43,7 +43,7 @@ python3 verify_release.py
 
 | Directory | Contents |
 |-----------|----------|
-| `transfer_GB/` | GenomeML Report Card package, manifests, and GB manuscript materials |
+| `reportcard_companion/` | GenomeML Report Card package, manifests, and GB manuscript materials |
 | `data/` | Overlap cohort (n=632), SpillOver rankings, E2E predictions, IG inputs |
 | `embeddings/` | Frozen pooled genome embeddings (regression / host / multitask) |
 | `models/` | Fine-tuned checkpoints + `checkpoint_manifest.json` |
@@ -63,4 +63,4 @@ See `docs/DATA_SOURCES.md` and `docs/REPRODUCIBILITY.md`.
 
 ## Citation
 
-Please cite the Genome Biology manuscript (GenomeML Report Card) and, where SpillOver scores are used, the SpillOver data resource.
+Please cite the  manuscript (GenomeML Report Card) and, where SpillOver scores are used, the SpillOver data resource.
